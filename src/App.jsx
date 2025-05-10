@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="mx-auto flex flex-col justify-center items-center bg-[#E6A300]">
       <div
-        className="max-w-md bg-[#FCDA8A] h-screen rounded-md shadow-sm p-10 flex flex-col items-center justify-start"
+        className="max-w-md bg-[#FCDA8A] rounded-md shadow-sm p-10 flex flex-col items-center justify-start"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",

@@ -27,13 +27,13 @@ function Step3({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#FCDA8A] text-center text-[#60230D]">
+      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
         Motivation & Preferences
       </h2>
 
       {/* Multi-checkbox reasons */}
       <div>
-        <label className="block text-md font-bold text-[#60230D]">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Lý do chính bạn chọn Chan Chan là gì? (Chọn nhiều)
         </label>
         <div className="space-y-2">
@@ -56,7 +56,7 @@ function Step3({ onDataChange, formData }) {
                 value={reason}
                 checked={localData.reasons.includes(reason)}
                 onChange={handleCheckboxChange}
-                className="mr-2"
+                className="mr-2 b"
               />
               <label className="text-sm font-bold text-[#60230D]">{reason}</label>
             </div>
@@ -67,7 +67,7 @@ function Step3({ onDataChange, formData }) {
 
       {/* Favorite dish */}
       <div>
-        <label className="block text-md font-bold text-[#60230D]">Món bạn thích nhất tại Chan Chan?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Món bạn thích nhất tại Chan Chan?</label>
         <input
           type="text"
           className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
@@ -80,7 +80,7 @@ function Step3({ onDataChange, formData }) {
 
       {/* Suggested dish */}
       <div>
-        <label className="block text-md font-bold text-[#60230D]">Có món nào bạn muốn thêm không?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Có món nào bạn muốn thêm không?</label>
         <input
           type="text"
           className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"

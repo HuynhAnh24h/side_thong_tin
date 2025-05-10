@@ -14,12 +14,12 @@ function Step4({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#FCDA8A] text-center text-[#60230D]">
+      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
         Brand Perception & Experience
       </h2>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn mô tả Chan Chan bằng 3 từ nào?
         </label>
         <input
@@ -33,7 +33,7 @@ function Step4({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn thấy Chan Chan khác gì với các quán chay / nhà hàng khác
         </label>
         <input
@@ -47,7 +47,7 @@ function Step4({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Trải nghiệm của bạn hôm nay thế nào? (1–5 sao)
         </label>
         <select
@@ -67,7 +67,7 @@ function Step4({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn có sẵn sàng giới thiệu Chan Chan cho người khác không?
         </label>
         <select

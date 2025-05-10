@@ -14,10 +14,10 @@ function Step2({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#FCDA8A] text-center text-[#60230D]">Behavior</h2>
+      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">Behavior</h2>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D]">Bạn đã từng đến Chan Chan bao nhiêu lần?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn đã từng đến Chan Chan bao nhiêu lần?</label>
         <select
           className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitCount}
@@ -31,7 +31,7 @@ function Step2({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D]">Bạn thường đến Chan Chan vào lúc nào?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn thường đến Chan Chan vào lúc nào?</label>
         <select
           className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitTime}
@@ -46,7 +46,7 @@ function Step2({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D]">Bạn đi vào lúc nào?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn đi vào lúc nào?</label>
         <select
           className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitDay}
@@ -59,7 +59,7 @@ function Step2({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D]">Bạn thường đi cùng ai?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn thường đi cùng ai?</label>
         <select
           className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitWith}

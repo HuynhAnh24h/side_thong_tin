@@ -2,7 +2,8 @@ import { Step1, Step2, Step3, Step4, Step5 } from "./components";
 import { useState, useEffect, useCallback } from "react";
 import bgImage from "./assets/bgMain.png";
 import logo from "./assets/logo.png";
-import footerImage from "./assets/footer.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // ✅ Import CSS
 
 function App() {
   const [step, setStep] = useState(1);
@@ -36,9 +37,9 @@ function App() {
 
   const handleSubmit = () => {
     console.log("Dữ liệu khảo sát:", formData);
-    alert("Gửi thành công!"); // Thêm thông báo khi gửi thành công
-    setStep(1); // Reset về bước đầu sau khi gửi dữ liệu
-    setFormData({}); // Xóa dữ liệu cũ
+    alert("Gửi thành công");
+    setStep(1);
+    setFormData({});
   };
 
   const steps = {
@@ -52,7 +53,7 @@ function App() {
   return (
     <div className="mx-auto min-h-screen flex flex-col justify-center items-center bg-[#E6A300]">
       <div
-        className="max-w-md bg-[#FCDA8A] h-screen rounded-md shadow-sm p-10 flex flex-col items-center justify-center"
+        className="max-w-md bg-[#FCDA8A] h-screen rounded-md shadow-sm p-10 flex flex-col items-center justify-start"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -60,7 +61,7 @@ function App() {
         }}
       >
         <div className="flex justify-center items-center mb-5">
-          <img src={logo} alt="Logo" />
+         <h1 className="text-center text-[#60230D] font-bold text-5xl">Logo</h1>
         </div>
         <div>
           {steps[step] || <div>Không tìm thấy bước này!</div>} {/* Đảm bảo hiển thị đúng */}

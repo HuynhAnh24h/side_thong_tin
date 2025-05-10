@@ -14,12 +14,12 @@ function Step5({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#FCDA8A] text-center text-[#60230D]">
+      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
         Future Direction
       </h2>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D]">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Nếu Chan Chan mở thêm chi nhánh, bạn muốn ở khu vực nào?
         </label>
         <input
@@ -33,7 +33,7 @@ function Step5({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn có muốn đặt hàng online hoặc giao tận nơi không?
         </label>
         <select
@@ -50,7 +50,7 @@ function Step5({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn sẽ quan tâm nếu Chan Chan có combo theo tuần / theo tháng chứ?
         </label>
         <select
@@ -67,7 +67,7 @@ function Step5({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold">
+        <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn muốn Chan Chan cải thiện điều gì nhất?
         </label>
         <input

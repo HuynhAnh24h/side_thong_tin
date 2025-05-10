@@ -62,7 +62,7 @@ function Step3({ onDataChange, formData }) {
             </div>
           ))}
         </div>
-        <p className="text-sm text-gray-500 mt-1">Chọn nhiều mục nếu bạn thích.</p>
+        <p className="block text-sm font-bold text-[#60230D]">Chọn nhiều mục nếu bạn thích.</p>
       </div>
 
       {/* Favorite dish */}

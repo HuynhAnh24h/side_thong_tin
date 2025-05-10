@@ -1,22 +1,44 @@
-import { Step1,Step2,Step3,Step4,Step5 } from "./components";
-import { useState } from "react";
-import bgImage from "./assets/bgMain.png"
-import logo from "./assets/logo.png"
-import footeImage from "./assets/footer.png"
+import { Step1, Step2, Step3, Step4, Step5 } from "./components";
+import { useState, useEffect, useCallback } from "react";
+import bgImage from "./assets/bgMain.png";
+import logo from "./assets/logo.png";
+import footerImage from "./assets/footer.png";
+
 function App() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
+  const [isFormValid, setIsFormValid] = useState(true);
 
-  const nextStep = () => setStep(prev => Math.min(prev + 1, 5));
-  const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
-
-  const handleDataChange = (newData) => {
-    setFormData(prev => ({ ...prev, ...newData }));
+  const nextStep = () => {
+    if (step < 5) setStep(prev => prev + 1); // Đảm bảo không vượt quá bước 5
   };
+
+  const prevStep = () => {
+    if (step > 1) setStep(prev => prev - 1); // Đảm bảo không nhỏ hơn bước 1
+  };
+
+  const handleDataChange = useCallback((newData) => {
+    setFormData(prev => ({ ...prev, ...newData }));
+  }, []);
+
+  const validateForm = useCallback(() => {
+    let isValid = true;
+    if (step === 1 && (!formData.age || formData.age.trim() === "")) { // Kiểm tra dữ liệu đầu vào của step1
+      isValid = false;
+    }
+    if (isFormValid !== isValid) setIsFormValid(isValid); // Chỉ cập nhật nếu giá trị thay đổi
+    return isValid;
+  }, [step, formData]);
+
+  useEffect(() => {
+    validateForm();
+  }, [formData, step]); // Đảm bảo kiểm tra form khi có thay đổi
 
   const handleSubmit = () => {
     console.log("Dữ liệu khảo sát:", formData);
-    // Gửi formData lên server tại đây
+    alert("Gửi thành công!"); // Thêm thông báo khi gửi thành công
+    setStep(1); // Reset về bước đầu sau khi gửi dữ liệu
+    setFormData({}); // Xóa dữ liệu cũ
   };
 
   const steps = {
@@ -28,29 +50,44 @@ function App() {
   };
 
   return (
-    <div className=" mx-auto min-h-screen flex flex-col justify-center items-center bg-[#E6A300]">
-      
-      <div className="max-w-md bg-[#FCDA8A] h-screen rounded-md shadow-sm p-10 flex flex-col items-center justify-center" style={{ backgroundImage: `url(${bgImage}) `,backgroundSize: "cover",
-    backgroundPosition: "center"}}>
-      <div className="flex justify-center items-center mb-5">
-          <img src={logo} alt="" />
-      </div>
-        <div className="">
-          {steps[step]}
-          <div className="mt-4 flex justify-between w-[100%]">
+    <div className="mx-auto min-h-screen flex flex-col justify-center items-center bg-[#E6A300]">
+      <div
+        className="max-w-md bg-[#FCDA8A] h-screen rounded-md shadow-sm p-10 flex flex-col items-center justify-center"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="flex justify-center items-center mb-5">
+          <img src={logo} alt="Logo" />
+        </div>
+        <div>
+          {steps[step] || <div>Không tìm thấy bước này!</div>} {/* Đảm bảo hiển thị đúng */}
+          <div className="mt-4 flex justify-between w-full">
             {step > 1 && (
-              <div className="flex justify-center items-center">
-                <button onClick={prevStep} className="bg-[#FCDA8A] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#584e33fb] hover:text-[#E6A300]">Trước</button>
-              </div>
+              <button
+                onClick={prevStep}
+                className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]"
+              >
+                Trước
+              </button>
             )}
             {step < 5 ? (
-              <div className="flex justify-center items-center">
-                <button onClick={nextStep} className="bg-[#E6A300] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#584e33fb] hover:text-[#E6A300]">Tiếp theo</button>
-              </div>
+              <button
+                onClick={() => validateForm() && nextStep()} // Kiểm tra trước khi chuyển bước
+                disabled={!isFormValid}
+                className={`bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]`}
+              >
+                {isFormValid ? "Tiếp theo" : "Bạn cần nhập đủ thông tin"}
+              </button>
             ) : (
-              <div className="flex justify-center items-center">
-                <button onClick={handleSubmit} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]">Gửi</button>
-              </div>
+              <button
+                onClick={handleSubmit}
+                className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]"
+              >
+                Gửi
+              </button>
             )}
           </div>
         </div>

@@ -16,9 +16,12 @@ function Step1({ onDataChange, formData }) {
     }));
   };
 
+  // Chỉ chạy useEffect khi `localData` thay đổi, tránh vòng lặp vô hạn
   useEffect(() => {
-    onDataChange(localData);
-  }, [localData, onDataChange]);
+    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
+      onDataChange(localData);
+    }
+  }, [localData, formData]); 
 
   return (
     <div className="space-y-4">
@@ -39,7 +42,7 @@ function Step1({ onDataChange, formData }) {
                 value={option}
                 checked={localData.age === option}
                 onChange={handleInputChange}
-                className="accent-[#E6A300]"
+                className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
               />
               <span>{option}</span>
             </label>
@@ -56,7 +59,7 @@ function Step1({ onDataChange, formData }) {
           name="job"
           value={localData.job}
           onChange={handleInputChange}
-          className="w-full border border-[#E6A300] p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
 
@@ -69,7 +72,7 @@ function Step1({ onDataChange, formData }) {
           name="location"
           value={localData.location}
           onChange={handleInputChange}
-          className="w-full border border-[#E6A300] p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
 
@@ -82,7 +85,7 @@ function Step1({ onDataChange, formData }) {
           name="lunchBudget"
           value={localData.lunchBudget}
           onChange={handleInputChange}
-          className="w-full border border-[#E6A300] p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
     </div>

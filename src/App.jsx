@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="mx-auto flex flex-col justify-center items-center bg-[#E6A300]">
+    <div className="mx-auto h-[100vh] flex flex-col justify-center items-center bg-[#E6A300]">
       <div
         className="max-w-md bg-[#FCDA8A] h-[100vh] rounded-md shadow-sm p-10 flex flex-col items-center justify-start"
         style={{
@@ -61,7 +61,7 @@ function App() {
         }}
       >
         <div className="flex justify-center items-center mb-5">
-         <h1 className="text-center text-[#60230D] font-bold text-5xl">Logo</h1>
+          <h1 className="text-center text-[#60230D] font-bold text-5xl">Logo</h1>
         </div>
         <div>
           {steps[step] || <div>Không tìm thấy bước này!</div>} {/* Đảm bảo hiển thị đúng */}

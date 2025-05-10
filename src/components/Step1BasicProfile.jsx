@@ -18,7 +18,8 @@ function Step1({ onDataChange, formData }) {
       <div>
         <label className="block">Bạn bao nhiêu tuổi?</label>
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none
+          "
           value={localData.age}
           onChange={(e) => setLocalData({ ...localData, age: e.target.value })}
         >
@@ -35,7 +36,7 @@ function Step1({ onDataChange, formData }) {
         <label className="block">Nghề nghiệp của bạn là gì?</label>
         <input
           type="text"
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.job}
           onChange={(e) => setLocalData({ ...localData, job: e.target.value })}
         />
@@ -45,7 +46,7 @@ function Step1({ onDataChange, formData }) {
         <label className="block">Bạn sống ở đâu?</label>
         <input
           type="text"
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.location}
           onChange={(e) =>
             setLocalData({ ...localData, location: e.target.value })
@@ -57,7 +58,7 @@ function Step1({ onDataChange, formData }) {
         <label className="block">Bạn sẵn sàng chi bao nhiêu cho bữa trưa?</label>
         <input
           type="text"
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.lunchBudget}
           onChange={(e) =>
             setLocalData({ ...localData, lunchBudget: e.target.value })

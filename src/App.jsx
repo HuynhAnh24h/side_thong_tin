@@ -1,5 +1,6 @@
 import { Step1,Step2,Step3,Step4,Step5 } from "./components";
 import { useState } from "react";
+import bgImage from "./assets/bgMain.png"
 function App() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
@@ -25,24 +26,27 @@ function App() {
   };
 
   return (
-    <div className=" mx-auto p-4 min-h-screen flex flex-col justify-center items-center bg-[#eeeeee]">
-      <div className="max-w-md bg-white  rounded-md shadow-sm p-10">
-        {steps[step]}
-        <div className="mt-4 flex justify-between w-[100%] px-10">
-          {step > 1 && (
-            <div>
-              <button onClick={prevStep} className="bg-gray-200 px-4 py-2 rounded">Trước</button>
-            </div>
-          )}
-          {step < 5 ? (
-            <div>
-              <button onClick={nextStep} className="bg-blue-500 text-white px-4 py-2 rounded">Tiếp</button>
-            </div>
-          ) : (
-            <div>
-              <button onClick={handleSubmit} className="bg-green-500 text-white px-4 py-2 rounded">Gửi</button>
-            </div>
-          )}
+    <div className=" mx-auto p-4 min-h-screen flex flex-col justify-center items-center bg-[#E6A300]">
+      <div className="max-w-md bg-[#FCDA8A] h-screen rounded-md shadow-sm p-10 flex flex-col items-center justify-center" style={{ backgroundImage: `url(${bgImage}) `,backgroundSize: "cover",
+    backgroundPosition: "center"}}>
+        <div className="">
+          {steps[step]}
+          <div className="mt-4 flex justify-between w-[100%]">
+            {step > 1 && (
+              <div className="flex justify-center items-center">
+                <button onClick={prevStep} className="bg-[#FCDA8A] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#584e33fb]">Trước</button>
+              </div>
+            )}
+            {step < 5 ? (
+              <div className="flex justify-center items-center">
+                <button onClick={nextStep} className="bg-[#E6A300] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#584e33fb]">Tiếp theo</button>
+              </div>
+            ) : (
+              <div className="flex justify-center items-center">
+                <button onClick={handleSubmit} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300]">Gửi</button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ function Step4({ onDataChange, formData }) {
         <label className="block"> Bạn mô tả Chan Chan bằng 3 từ nào?</label>
         <input
           type="text"
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.job}
           onChange={(e) => setLocalData({ ...localData, job: e.target.value })}
         />
@@ -29,7 +29,7 @@ function Step4({ onDataChange, formData }) {
         <label className="block"> Bạn thấy Chan Chan khác gì với các quán chay / nhà hàng khác</label>
         <input
           type="text"
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.job}
           onChange={(e) => setLocalData({ ...localData, job: e.target.value })}
         />
@@ -37,7 +37,7 @@ function Step4({ onDataChange, formData }) {
       <div>
         <label className="block">Trải nghiệm của bạn hôm nay thế nào? (1–5 sao)</label>
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.age}
           onChange={(e) => setLocalData({ ...localData, age: e.target.value })}
         >
@@ -53,7 +53,7 @@ function Step4({ onDataChange, formData }) {
       <div>
         <label className="block">Bạn có sẵn sàng giới thiệu Chan Chan cho người khác không?</label>
         <select
-          className="w-full border p-2 rounded"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
           value={localData.age}
           onChange={(e) => setLocalData({ ...localData, age: e.target.value })}
         >

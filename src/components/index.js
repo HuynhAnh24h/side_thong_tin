@@ -1,0 +1,5 @@
+export {default as Step1} from'./Step1BasicProfile'
+export {default as Step2} from'./Step2Behavior'
+export {default as Step3} from'./Step3Motivation'
+export {default as Step4} from'./Step4BrandPerception'
+export {default as Step5} from'./Step5FutureDirection'

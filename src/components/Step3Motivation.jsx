@@ -14,12 +14,12 @@ function Step3({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold">3.  Motivation & Preferences</h2>
+      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#FCDA8A] text-center text-[#60230D]">Motivation & Preferences</h2>
 
       <div>
-        <label className="block">Lý do chính bạn chọn Chan Chan là gì?</label>
+        <label className="block text-md font-bold">Lý do chính bạn chọn Chan Chan là gì?</label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.age}
           onChange={(e) => setLocalData({ ...localData, age: e.target.value })}
         >
@@ -39,20 +39,20 @@ function Step3({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block">Món bạn thích nhất tại chan chan ?</label>
+        <label className="block text-md font-bold">Món bạn thích nhất tại chan chan ?</label>
         <input
           type="text"
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.job}
           onChange={(e) => setLocalData({ ...localData, job: e.target.value })}
         />
       </div>
 
       <div>
-        <label className="block">Có món nào bạn muốn thêm không?</label>
+        <label className="block text-md font-bold">Có món nào bạn muốn thêm không?</label>
         <input
           type="text"
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none"
+          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
           value={localData.location}
           onChange={(e) =>
             setLocalData({ ...localData, location: e.target.value })

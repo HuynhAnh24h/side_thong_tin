@@ -42,7 +42,7 @@ function Step1({ onDataChange, formData }) {
                 value={option}
                 checked={localData.age === option}
                 onChange={handleInputChange}
-                className="border-2 border-[#E6A300] p-5 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+                className="border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
               />
               <span className="w-full text-sm text-[#60230D]">{option}</span>
             </label>

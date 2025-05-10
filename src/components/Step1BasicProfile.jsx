@@ -33,7 +33,7 @@ function Step1({ onDataChange, formData }) {
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Bạn bao nhiêu tuổi?
         </label>
-        <div className="flex flex-col justify-start items-center gap-3">
+        <div className="flex flex-col justify-start items-center gap-2">
           {['<18', '18–24', '25–34', '35–44', '45+'].map((option) => (
             <label key={option} className="flex items-center gap-1 w-full">
               <input

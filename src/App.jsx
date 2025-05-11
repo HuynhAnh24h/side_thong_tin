@@ -1,9 +1,9 @@
 import { Step1, Step2, Step3, Step4, Step5 } from "./components";
 import { useState, useEffect, useCallback } from "react";
 import bgImage from "./assets/bgMain.png";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.jpg";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // ✅ Import CSS
+import "react-toastify/dist/ReactToastify.css"; // Import CSS
 
 function App() {
   const [step, setStep] = useState(1);
@@ -11,20 +11,21 @@ function App() {
   const [isFormValid, setIsFormValid] = useState(true);
 
   const nextStep = () => {
-    if (step < 5) setStep(prev => prev + 1); // Đảm bảo không vượt quá bước 5
+    if (step < 5) setStep((prev) => prev + 1); // Đảm bảo không vượt quá bước 5
   };
 
   const prevStep = () => {
-    if (step > 1) setStep(prev => prev - 1); // Đảm bảo không nhỏ hơn bước 1
+    if (step > 1) setStep((prev) => prev - 1); // Đảm bảo không nhỏ hơn bước 1
   };
 
   const handleDataChange = useCallback((newData) => {
-    setFormData(prev => ({ ...prev, ...newData }));
+    setFormData((prev) => ({ ...prev, ...newData }));
   }, []);
 
   const validateForm = useCallback(() => {
     let isValid = true;
-    if (step === 1 && (!formData.age || formData.age.trim() === "")) { // Kiểm tra dữ liệu đầu vào của step1
+    if (step === 1 && (!formData.age || formData.age.trim() === "")) {
+      // Kiểm tra dữ liệu đầu vào của step1
       isValid = false;
     }
     if (isFormValid !== isValid) setIsFormValid(isValid); // Chỉ cập nhật nếu giá trị thay đổi
@@ -61,10 +62,13 @@ function App() {
         }}
       >
         <div className="flex justify-center items-center mb-5">
-          <h1 className="text-center text-[#60230D] font-bold text-5xl">Logo</h1>
+          <h1 className="text-center text-[#60230D] font-bold text-5xl">
+            Logo
+          </h1>
         </div>
         <div>
-          {steps[step] || <div>Không tìm thấy bước này!</div>} {/* Đảm bảo hiển thị đúng */}
+          {steps[step] || <div>Không tìm thấy bước này!</div>}{" "}
+          {/* Đảm bảo hiển thị đúng */}
           <div className="mt-4 flex justify-between w-full">
             {step > 1 && (
               <button

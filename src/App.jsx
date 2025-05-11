@@ -62,7 +62,9 @@ function App() {
         }}
       >
         <div className="flex justify-center items-center mb-5">
-          <img src={logo} className="w-full h-full" />
+          <div className="w-[100px] h-[100px]">
+            <img src={logo} className="w-full h-full" />
+          </div>
         </div>
         <div>
           {steps[step] || <div>Không tìm thấy bước này!</div>}{" "}

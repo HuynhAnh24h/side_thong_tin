@@ -13,7 +13,7 @@ function Step5({ onDataChange, formData }) {
   }, [localData]);
 
   return (
-    <div className="space-y-4 h-[60vh]">
+    <div className="space-y-4">
       <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
         Future Direction
       </h2>

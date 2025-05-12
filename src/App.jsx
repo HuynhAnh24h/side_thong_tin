@@ -1,4 +1,4 @@
-import { Step1, Step2, Step3, Step4, Step5, Success } from "./components";
+import { LoadingSpinner, Step1, Step2, Step3, Step4, Step5, Success } from "./components";
 import { useState, useCallback, useMemo } from "react";
 import bgImage from "./assets/bgMain.png";
 import logo from "./assets/logo.jpg";
@@ -10,6 +10,7 @@ function App() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const nextStep = useCallback(() => {
     setStep((prev) => Math.min(prev + 1, 5)); // Giới hạn tối đa bước 5
@@ -35,6 +36,7 @@ const validateForm = useCallback(() => {
   const handleSubmit = async () => {
     setStep(1);
     try {
+      setIsLoading(true)
         const response = await fetch("https://test.sayaka.vn/api/survey", {
             method: "POST",
             body: JSON.stringify(formData),
@@ -49,6 +51,7 @@ const validateForm = useCallback(() => {
         }
         toast.success("Gửi thành công!");
         setFormData({});
+        setIsLoading(false)
         setIsSuccess(true);
 
     } catch (error) {
@@ -76,6 +79,7 @@ const validateForm = useCallback(() => {
             <img src={logo} className="w-full h-full" />
           </div>
         </div>
+        {isLoading && <div><LoadingSpinner/></div>}
         {isSuccess ? (<div><Success/></div>):(
            <div>
             {steps[step] || <div>Không tìm thấy bước này!</div>}

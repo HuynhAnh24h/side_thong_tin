@@ -34,8 +34,6 @@ const validateForm = useCallback(() => {
 
   const handleSubmit = async () => {
     setStep(1);
-    console.log("Dữ liệu gửi đi:", JSON.stringify(formData));
-
     try {
         const response = await fetch("https://test.sayaka.vn/api/survey", {
             method: "POST",

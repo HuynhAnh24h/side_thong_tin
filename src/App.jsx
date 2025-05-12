@@ -37,7 +37,7 @@ const validateForm = useCallback(() => {
     setStep(1);
     try {
       setIsLoading(true)
-        const response = await fetch("http://test.sayaka.vn/api/survey", {
+        const response = await fetch("https://member.sayaka.vn/api/survey", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
@@ -58,6 +58,7 @@ const validateForm = useCallback(() => {
         console.error("Lỗi khi gửi yêu cầu:", error);
        toast.error(`Có lỗi xảy ra! ${error.message}`);
        console.log(error.message)
+       setIsLoading(false)
     }
   };
 

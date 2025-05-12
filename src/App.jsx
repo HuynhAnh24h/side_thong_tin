@@ -37,7 +37,7 @@ const validateForm = useCallback(() => {
     setStep(1);
     try {
       setIsLoading(true)
-        const response = await fetch("https://test.sayaka.vn/api/survey", {
+        const response = await fetch("http://test.sayaka.vn/api/survey", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {

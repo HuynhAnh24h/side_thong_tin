@@ -13,7 +13,7 @@ function Step5({ onDataChange, formData }) {
   }, [localData]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 h-[60vh]">
       <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
         Future Direction
       </h2>
@@ -44,8 +44,8 @@ function Step5({ onDataChange, formData }) {
           }
         >
           <option value="">--Chọn--</option>
-          <option value="yes">Có</option>
-          <option value="no">Không</option>
+          <option value="Giao hàng">Có tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không tôi không muốn giao hàng</option>
         </select>
       </div>
 
@@ -61,8 +61,8 @@ function Step5({ onDataChange, formData }) {
           }
         >
           <option value="">--Chọn--</option>
-          <option value="yes">Có</option>
-          <option value="no">Không</option>
+          <option value="Quan tâm combo">Có</option>
+          <option value="Không quan tâm combo">Không</option>
         </select>
       </div>
 

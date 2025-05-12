@@ -24,7 +24,7 @@ function Step1({ onDataChange, formData }) {
   }, [localData, formData]); 
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 h-[60vh]">
       <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
         Basic Profile
       </h2>
@@ -34,7 +34,7 @@ function Step1({ onDataChange, formData }) {
           Bạn bao nhiêu tuổi?
         </label>
         <div className="flex flex-col justify-start items-center gap-2">
-          {['<18', '18–24', '25–34', '35–44', '45+'].map((option) => (
+          {['18', '18–24', '25–34', '35–44', '45'].map((option) => (
             <label key={option} className="flex items-center gap-1 w-full">
               <input
                 type="radio"

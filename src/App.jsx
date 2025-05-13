@@ -1,7 +1,7 @@
 import { LoadingSpinner, Step1, Step2, Step3, Step4, Step5, Success } from "./components";
 import { useState, useCallback, useMemo } from "react";
 import bgImage from "./assets/bgMain.png";
-import logo from "./assets/logo.jpg";
+import logo from "./assets/logo.png";
 import { ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
 
@@ -71,12 +71,12 @@ const validateForm = useCallback(() => {
   }), [formData]);
 
   return (
-    <div className="mx-auto h-[100vh] flex flex-col justify-center items-center bg-[#E6A300]">
-      <div className="max-w-md bg-[#FCDA8A] rounded-md shadow-sm p-10 flex flex-col items-center justify-start"
+    <div className="mx-auto h-[100vh] flex flex-col justify-center items-center bg-amber-50]">
+      <div className="max-w-md bg-white rounded-md shadow-sm p-10 flex flex-col items-center justify-start"
         style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
         
         <div className="flex justify-center items-center mb-5">
-          <div className="w-[100px] h-[100px]">
+          <div className="w-[150px] h-[150px]">
             <img src={logo} className="w-full h-full" />
           </div>
         </div>
@@ -86,16 +86,16 @@ const validateForm = useCallback(() => {
             {steps[step] || <div>Không tìm thấy bước này!</div>}
             <div className="mt-4 flex justify-between w-full">
               {step > 1 && (
-                <button onClick={prevStep} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]">
+                <button onClick={prevStep} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer">
                   Trước
                 </button>
               )}
               {step < 5 ? (
-                <button onClick={() => formValid && nextStep()} disabled={!formValid} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]">
+                <button onClick={() => formValid && nextStep()} disabled={!formValid} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer">
                   {formValid ? "Tiếp theo" : "Bạn cần nhập đủ thông tin"}
                 </button>
               ) : (
-                <button onClick={handleSubmit} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#E6A300] hover:text-[#60230D]">
+                <button onClick={handleSubmit} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer">
                   Gửi
                 </button>
               )}

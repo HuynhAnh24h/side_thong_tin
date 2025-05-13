@@ -25,7 +25,7 @@ function Step1({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
+      <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-while">
         Basic Profile
       </h2>
 
@@ -42,7 +42,7 @@ function Step1({ onDataChange, formData }) {
                 value={option}
                 checked={localData.age === option}
                 onChange={handleInputChange}
-                className="border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+                className="border-2 border-gray p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
               />
               <span className="w-full text-sm text-[#60230D]">{option}</span>
             </label>
@@ -59,7 +59,7 @@ function Step1({ onDataChange, formData }) {
           name="job"
           value={localData.job}
           onChange={handleInputChange}
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
 
@@ -72,7 +72,7 @@ function Step1({ onDataChange, formData }) {
           name="location"
           value={localData.location}
           onChange={handleInputChange}
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
 
@@ -85,7 +85,7 @@ function Step1({ onDataChange, formData }) {
           name="lunchBudget"
           value={localData.lunchBudget}
           onChange={handleInputChange}
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
     </div>

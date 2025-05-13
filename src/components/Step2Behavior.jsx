@@ -14,12 +14,12 @@ function Step2({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">Behavior</h2>
+      <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">Behavior</h2>
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">Bạn đã từng đến Chan Chan bao nhiêu lần?</label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitCount}
           onChange={(e) => setLocalData({ ...localData, visitCount: e.target.value })}
         >
@@ -33,7 +33,7 @@ function Step2({ onDataChange, formData }) {
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">Bạn thường đến Chan Chan vào lúc nào?</label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitTime}
           onChange={(e) => setLocalData({ ...localData, visitTime: e.target.value })}
         >
@@ -48,7 +48,7 @@ function Step2({ onDataChange, formData }) {
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">Bạn đi vào lúc nào?</label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitDay}
           onChange={(e) => setLocalData({ ...localData, visitDay: e.target.value })}
         >
@@ -61,7 +61,7 @@ function Step2({ onDataChange, formData }) {
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">Bạn thường đi cùng ai?</label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitWith}
           onChange={(e) => setLocalData({ ...localData, visitWith: e.target.value })}
         >

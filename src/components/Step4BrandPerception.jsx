@@ -14,7 +14,7 @@ function Step4({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
+      <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
         Brand Perception & Experience
       </h2>
 
@@ -24,7 +24,7 @@ function Step4({ onDataChange, formData }) {
         </label>
         <input
           type="text"
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.brandDescription}
           onChange={(e) =>
             setLocalData({ ...localData, brandDescription: e.target.value })
@@ -38,7 +38,7 @@ function Step4({ onDataChange, formData }) {
         </label>
         <input
           type="text"
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.brandDifference}
           onChange={(e) =>
             setLocalData({ ...localData, brandDifference: e.target.value })
@@ -51,7 +51,7 @@ function Step4({ onDataChange, formData }) {
           Trải nghiệm của bạn hôm nay thế nào? (1–5 sao)
         </label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.experienceRating}
           onChange={(e) =>
             setLocalData({ ...localData, experienceRating: e.target.value })
@@ -71,7 +71,7 @@ function Step4({ onDataChange, formData }) {
           Bạn có sẵn sàng giới thiệu Chan Chan cho người khác không?
         </label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.recommendChanChan}
           onChange={(e) =>
             setLocalData({ ...localData, recommendChanChan: e.target.value })

@@ -14,7 +14,7 @@ function Step5({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#60230D] p-5 rounded-md bg-[#60230D] text-center text-[#E6A300]">
+      <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
         Future Direction
       </h2>
 
@@ -24,7 +24,7 @@ function Step5({ onDataChange, formData }) {
         </label>
         <input
           type="text"
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.preferredLocation}
           onChange={(e) =>
             setLocalData({ ...localData, preferredLocation: e.target.value })
@@ -37,7 +37,7 @@ function Step5({ onDataChange, formData }) {
           Bạn có muốn đặt hàng online hoặc giao tận nơi không?
         </label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.wantsDelivery}
           onChange={(e) =>
             setLocalData({ ...localData, wantsDelivery: e.target.value })
@@ -54,7 +54,7 @@ function Step5({ onDataChange, formData }) {
           Bạn sẽ quan tâm nếu Chan Chan có combo theo tuần / theo tháng chứ?
         </label>
         <select
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.interestedInCombo}
           onChange={(e) =>
             setLocalData({ ...localData, interestedInCombo: e.target.value })
@@ -72,7 +72,7 @@ function Step5({ onDataChange, formData }) {
         </label>
         <input
           type="text"
-          className="w-full border-2 border-[#E6A300] p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.suggestedImprovement}
           onChange={(e) =>
             setLocalData({ ...localData, suggestedImprovement: e.target.value })

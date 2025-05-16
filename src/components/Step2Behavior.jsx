@@ -4,7 +4,6 @@ function Step2({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     visitCount: formData.visitCount || "",
     visitTime: formData.visitTime || "",
-    visitDay: formData.visitDay || "",
     visitWith: formData.visitWith || "",
   });
 
@@ -24,9 +23,9 @@ function Step2({ onDataChange, formData }) {
           onChange={(e) => setLocalData({ ...localData, visitCount: e.target.value })}
         >
           <option value="Chưa trả lời">--Chọn--</option>
-          <option>Lần đầu</option>
-          <option>2–5 lần</option>
-          <option>Thường xuyên (1 lần/tuần hoặc hơn)</option>
+          <option value="Lần đầu">Lần đầu</option>
+          <option value="2 - 5 lần">2–5 lần</option>
+          <option value="Thường xuyên">Thường xuyên (1 lần/tuần hoặc hơn)</option>
         </select>
       </div>
       <div>
@@ -34,13 +33,13 @@ function Step2({ onDataChange, formData }) {
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitDay}
-          onChange={(e) => setLocalData({ ...localData, visitDay: e.target.value })}
+          onChange={(e) => setLocalData({ ...localData, visitTime: e.target.value })}
         >
           <option value="Chưa trả lời">--Chọn--</option>
-          <option>Sáng</option>
-          <option>Trưa</option>
-          <option>Chiều</option>
-          <option>Tối</option>
+          <option value="Sáng">Sáng</option>
+          <option value="Trưa">Trưa</option>
+          <option value="Chiều">Chiều</option>
+          <option value="Tối">Tối</option>
         </select>
       </div>
 
@@ -52,10 +51,10 @@ function Step2({ onDataChange, formData }) {
           onChange={(e) => setLocalData({ ...localData, visitWith: e.target.value })}
         >
           <option value="Chưa trả lời">--Chọn--</option>
-          <option>Một mình</option>
-          <option>Bạn bè</option>
-          <option>Gia đình</option>
-          <option>Đồng nghiệp</option>
+          <option value="Một mình">Một mình</option>
+          <option value="Bạn bè">Bạn bè</option>
+          <option value="Gia đình">Gia đình</option>
+          <option value="Đồng nghiệp">Đồng nghiệp</option>
         </select>
       </div>
     </div>

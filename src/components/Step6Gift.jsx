@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
+
 function Step6({ onDataChange, formData }) {
-  const [selectedGift, setSelectedGift] = useState("Nước thảo mộc sương sáo");
-  const [localData, setLocalData] = useState({
-    gift: formData.gift || "",
-  });
+  const [selectedGift, setSelectedGift] = useState(formData.gift || "Nước thảo mộc sương sáo");
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setLocalData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    const { value } = e.target;
+    setSelectedGift(value);  // Cập nhật món quà đã chọn
+    onDataChange({ gift: value });  // Cập nhật dữ liệu lên cha
   };
+
   useEffect(() => {
-    onDataChange(localData);
-  }, [localData]);
+    onDataChange({ gift: selectedGift });
+  }, [selectedGift]);
 
   return (
     <div className="space-y-4">
@@ -21,11 +19,11 @@ function Step6({ onDataChange, formData }) {
         ChanChan cảm ơn 
       </h2>
 
-       <div>
+      <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Chanchan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?
         </label>
-         <div className="flex flex-col justify-start items-center gap-2">
+        <div className="flex flex-col justify-start items-center gap-2">
           {[
             "Nước thảo mộc sương sáo",
             "Nước tía tô hạt chia",

@@ -10,7 +10,6 @@ function App() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
-  const [isLoading, setIsLoading] = useState(false)
 
   const nextStep = useCallback(() => {
     setStep((prev) => Math.min(prev + 1, 6)); // Giới hạn tối đa bước 5
@@ -38,30 +37,26 @@ const validateForm = useCallback(() => {
     console.log(formData)
     toast.success("Gửi thành công!");
     setFormData({});
-    setIsLoading(false)
     setIsSuccess(true);
-    // try {
-    //   setIsLoading(true)
-    //     const response = await fetch("https://member.sayaka.vn/api/survey", {
-    //         method: "POST",
-    //         body: JSON.stringify(formData),
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         }
-    //     });
+    try {
+      setIsLoading(true)
+        const response = await fetch("https://member.sayaka.vn/api/survey", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
 
-    //     if (!response.ok) {
-    //         const errorText = await response.text();
-    //         throw new Error(`Lỗi ${response.status}: ${errorText}`);
-    //     }
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Lỗi ${response.status}: ${errorText}`);
+        }
         
 
-    // } catch (error) {
-    //     console.error("Lỗi khi gửi yêu cầu:", error);
-    //    toast.error(`Có lỗi xảy ra! ${error.message}`);
-    //    console.log(error.message)
-    //    setIsLoading(false)
-    // }
+    } catch (error) {
+        console.error("Lỗi khi gửi yêu cầu:", error);
+    }
   };
 
   const steps = useMemo(() => ({
@@ -82,7 +77,6 @@ const validateForm = useCallback(() => {
             <img src={logo} className="w-full h-full" />
           </div>
         </div>
-        {isLoading && <div><LoadingSpinner/></div>}
         {isSuccess ? (<div><Success/></div>):(
            <div>
             {steps[step] || <div>Không tìm thấy bước này!</div>}

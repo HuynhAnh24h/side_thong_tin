@@ -37,8 +37,10 @@ function Step2({ onDataChange, formData }) {
           onChange={(e) => setLocalData({ ...localData, visitDay: e.target.value })}
         >
           <option value="">--Chọn--</option>
-          <option>Trong tuần</option>
-          <option>Cuối tuần</option>
+          <option>Sáng</option>
+          <option>Trưa</option>
+          <option>Chiều</option>
+          <option>Tối</option>
         </select>
       </div>
 

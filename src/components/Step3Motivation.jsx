@@ -77,19 +77,6 @@ function Step3({ onDataChange, formData }) {
           }
         />
       </div>
-
-      {/* Suggested dish */}
-      <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Có món nào bạn muốn thêm không?</label>
-        <input
-          type="text"
-          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.suggestedDish}
-          onChange={(e) =>
-            setLocalData({ ...localData, suggestedDish: e.target.value })
-          }
-        />
-      </div>
     </div>
   );
 }

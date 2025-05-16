@@ -42,7 +42,7 @@ function Step4({ onDataChange, formData }) {
             setLocalData({ ...localData, experienceRating: e.target.value })
           }
         >
-          <option value="">--Chọn--</option>
+          <option value="Chưa trả lời">--Chọn--</option>
           <option value="5">★★★★★</option>
           <option value="4">★★★★</option>
           <option value="3">★★★</option>
@@ -62,10 +62,10 @@ function Step4({ onDataChange, formData }) {
             setLocalData({ ...localData, recommendChanChan: e.target.value })
           }
         >
-          <option value="">--Chọn--</option>
-          <option value="Rất sẵn lòng">Vâng rất sẵn lòng</option>
-          <option value="Để suy nghĩ đã">Để suy nghĩ đã</option>
-          <option value="Hẹn lần sau nha">Hẹn lần sau nha</option>
+          <option value="Chưa trả lời">--Chọn--</option>
+          <option value="Rất sẵn lòng">Vâng, rất sẵn lòng</option>
+          <option value="Chưa chắc chắn">Tôi chưa chắc chắn </option>
+          <option value="Không giới thiệu">Tôi sẽ không giới thiệu</option>
         </select>
       </div>
     </div>

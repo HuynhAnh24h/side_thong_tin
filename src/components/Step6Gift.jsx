@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-
 function Step6({ onDataChange, formData }) {
+  const [selectedGift, setSelectedGift] = useState("Nước thảo mộc sương sáo");
   const [localData, setLocalData] = useState({
     gift: formData.gift || "",
   });
@@ -25,15 +25,21 @@ function Step6({ onDataChange, formData }) {
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Chanchan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?
         </label>
-        <div className="flex flex-col justify-start items-center gap-2">
-          {['Nước thảo mộc sương sáo','Nước tía tô hạt chia','Nước chanh dây xí muội','Trà hoa cúc nha đam', 'Bánh pudding'].map((option) => (
+         <div className="flex flex-col justify-start items-center gap-2">
+          {[
+            "Nước thảo mộc sương sáo",
+            "Nước tía tô hạt chia",
+            "Nước chanh dây xí muội",
+            "Trà hoa cúc nha đam",
+            "Bánh pudding"
+          ].map((option) => (
             <label key={option} className="flex items-center gap-1 w-full">
               <input
                 type="radio"
                 name="gift"
                 value={option}
-                checked={localData.gift === option}
-                 onChange={handleInputChange}
+                checked={selectedGift === option}
+                onChange={handleInputChange}
                 className="border-2 border-gray p-2 rounded focus:bg-[#FCDA8A] focus:border-[#E6A300] outline-none text-[#60230D] text-sm font-bold"
               />
               <span className="w-full text-sm text-[#60230D]">{option}</span>

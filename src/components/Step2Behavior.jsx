@@ -23,7 +23,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitCount}
           onChange={(e) => setLocalData({ ...localData, visitCount: e.target.value })}
         >
-          <option value="">--Chọn--</option>
+          <option value="Chưa trả lời">--Chọn--</option>
           <option>Lần đầu</option>
           <option>2–5 lần</option>
           <option>Thường xuyên (1 lần/tuần hoặc hơn)</option>
@@ -36,7 +36,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitDay}
           onChange={(e) => setLocalData({ ...localData, visitDay: e.target.value })}
         >
-          <option value="">--Chọn--</option>
+          <option value="Chưa trả lời">--Chọn--</option>
           <option>Sáng</option>
           <option>Trưa</option>
           <option>Chiều</option>
@@ -51,7 +51,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitWith}
           onChange={(e) => setLocalData({ ...localData, visitWith: e.target.value })}
         >
-          <option value="">--Chọn--</option>
+          <option value="Chưa trả lời">--Chọn--</option>
           <option>Một mình</option>
           <option>Bạn bè</option>
           <option>Gia đình</option>

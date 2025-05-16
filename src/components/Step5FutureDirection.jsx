@@ -43,9 +43,9 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, wantsDelivery: e.target.value })
           }
         >
-          <option value="">--Chọn--</option>
-          <option value="Giao hàng">Có tôi muốn giao hàng tận nơi</option>
-          <option value="Không giao hàng">Không tôi không muốn giao hàng</option>
+          <option value="Chưa trả lời">--Chọn--</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
         </select>
       </div>
 
@@ -60,7 +60,7 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, interestedInCombo: e.target.value })
           }
         >
-          <option value="">--Chọn--</option>
+          <option value="Chưa trả lời">--Chọn--</option>
           <option value="Quan tâm combo">Có</option>
           <option value="Không quan tâm combo">Không</option>
         </select>

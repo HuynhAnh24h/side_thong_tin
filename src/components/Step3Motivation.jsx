@@ -47,6 +47,7 @@ function Step3({ onDataChange, formData }) {
             "Gần nhà",
             "Gần chỗ làm",
             "Thương hiệu",
+            "Quà Online",
           ].map((reason) => (
             <div key={reason} className="flex items-center">
               <input

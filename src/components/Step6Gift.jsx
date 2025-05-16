@@ -18,7 +18,7 @@ function Step6({ onDataChange, formData }) {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
-        Quà Online
+        ChanChan cảm ơn 
       </h2>
 
        <div>
@@ -26,7 +26,7 @@ function Step6({ onDataChange, formData }) {
           Chanchan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?
         </label>
         <div className="flex flex-col justify-start items-center gap-2">
-          {['Nước thảo mộc sương sáo','Nước tía tô hạt chia','Nước chanh dây xí muội','Trà hoa cúc nha dam', 'Bánh pudding'].map((option) => (
+          {['Nước thảo mộc sương sáo','Nước tía tô hạt chia','Nước chanh dây xí muội','Trà hoa cúc nha đam', 'Bánh pudding'].map((option) => (
             <label key={option} className="flex items-center gap-1 w-full">
               <input
                 type="radio"

@@ -54,7 +54,6 @@ function Step2({ onDataChange, formData }) {
           <option>Bạn bè</option>
           <option>Gia đình</option>
           <option>Đồng nghiệp</option>
-          <option>FWB</option>
         </select>
       </div>
     </div>

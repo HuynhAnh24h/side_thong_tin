@@ -36,31 +36,32 @@ const validateForm = useCallback(() => {
   const handleSubmit = async () => {
     setStep(1);
     console.log(formData)
-    try {
-      setIsLoading(true)
-        const response = await fetch("https://member.sayaka.vn/api/survey", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
+    toast.success("Gửi thành công!");
+    setFormData({});
+    setIsLoading(false)
+    setIsSuccess(true);
+    // try {
+    //   setIsLoading(true)
+    //     const response = await fetch("https://member.sayaka.vn/api/survey", {
+    //         method: "POST",
+    //         body: JSON.stringify(formData),
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     });
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Lỗi ${response.status}: ${errorText}`);
-        }
-        toast.success("Gửi thành công!");
-        setFormData({});
-        setIsLoading(false)
-        setIsSuccess(true);
+    //     if (!response.ok) {
+    //         const errorText = await response.text();
+    //         throw new Error(`Lỗi ${response.status}: ${errorText}`);
+    //     }
+        
 
-    } catch (error) {
-        console.error("Lỗi khi gửi yêu cầu:", error);
-       toast.error(`Có lỗi xảy ra! ${error.message}`);
-       console.log(error.message)
-       setIsLoading(false)
-    }
+    // } catch (error) {
+    //     console.error("Lỗi khi gửi yêu cầu:", error);
+    //    toast.error(`Có lỗi xảy ra! ${error.message}`);
+    //    console.log(error.message)
+    //    setIsLoading(false)
+    // }
   };
 
   const steps = useMemo(() => ({

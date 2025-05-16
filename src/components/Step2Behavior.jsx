@@ -29,22 +29,6 @@ function Step2({ onDataChange, formData }) {
           <option>Thường xuyên (1 lần/tuần hoặc hơn)</option>
         </select>
       </div>
-
-      <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Bồ thường đến Chan Chan vào lúc nào?</label>
-        <select
-          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.visitTime}
-          onChange={(e) => setLocalData({ ...localData, visitTime: e.target.value })}
-        >
-          <option value="">--Chọn--</option>
-          <option>Sáng</option>
-          <option>Trưa</option>
-          <option>Chiều</option>
-          <option>Tối</option>
-        </select>
-      </div>
-
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">Bồ thường đến Chan Chan vào lúc nào??</label>
         <select

@@ -1,4 +1,4 @@
-import { LoadingSpinner, Step1, Step2, Step3, Step4, Step5,Step6, Success } from "./components";
+import { Step1, Step2, Step3, Step4, Step5,Step6, Success } from "./components";
 import { useState, useCallback, useMemo } from "react";
 import bgImage from "./assets/bgMain.png";
 import logo from "./assets/logo.png";
@@ -39,7 +39,6 @@ const validateForm = useCallback(() => {
     setFormData({});
     setIsSuccess(true);
     try {
-      setIsLoading(true)
         const response = await fetch("https://member.sayaka.vn/api/survey", {
             method: "POST",
             body: JSON.stringify(formData),

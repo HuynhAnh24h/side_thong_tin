@@ -63,9 +63,9 @@ function Step4({ onDataChange, formData }) {
           }
         >
           <option value="">--Chọn--</option>
-          <option value="yes">Vâng rất sẵn lòng</option>
-          <option value="maybe">Để suy nghĩ đã</option>
-          <option value="no">Hẹn lần sau nha</option>
+          <option value="Rất sẵn lòng">Vâng rất sẵn lòng</option>
+          <option value="Để suy nghĩ đã">Để suy nghĩ đã</option>
+          <option value="Hẹn lần sau nha">Hẹn lần sau nha</option>
         </select>
       </div>
     </div>

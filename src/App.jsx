@@ -1,4 +1,4 @@
-import { LoadingSpinner, Step1, Step2, Step3, Step4, Step5, Success } from "./components";
+import { LoadingSpinner, Step1, Step2, Step3, Step4, Step5,Step6, Success } from "./components";
 import { useState, useCallback, useMemo } from "react";
 import bgImage from "./assets/bgMain.png";
 import logo from "./assets/logo.png";
@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
   const nextStep = useCallback(() => {
-    setStep((prev) => Math.min(prev + 1, 5)); // Giới hạn tối đa bước 5
+    setStep((prev) => Math.min(prev + 1, 6)); // Giới hạn tối đa bước 5
   }, []);
 
   const prevStep = useCallback(() => {
@@ -35,6 +35,7 @@ const validateForm = useCallback(() => {
 
   const handleSubmit = async () => {
     setStep(1);
+    console.log(formData)
     try {
       setIsLoading(true)
         const response = await fetch("https://member.sayaka.vn/api/survey", {
@@ -68,6 +69,7 @@ const validateForm = useCallback(() => {
     3: <Step3 onDataChange={handleDataChange} formData={formData} />,
     4: <Step4 onDataChange={handleDataChange} formData={formData} />,
     5: <Step5 onDataChange={handleDataChange} formData={formData} />,
+    6: <Step6 onDataChange={handleDataChange} formData={formData} />,
   }), [formData]);
 
   return (
@@ -89,7 +91,7 @@ const validateForm = useCallback(() => {
                   Trước
                 </button>
               )}
-              {step < 5 ? (
+              {step < 6 ? (
                 <button onClick={() => formValid && nextStep()} disabled={!formValid} className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer">
                   {formValid ? "Tiếp theo" : "Bạn cần nhập đủ thông tin"}
                 </button>

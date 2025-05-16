@@ -34,7 +34,7 @@ function Step3({ onDataChange, formData }) {
       {/* Multi-checkbox reasons */}
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Lý do chính bạn chọn Chan Chan là gì? (Chọn nhiều)
+          Lý do chính Bồ chọn Chan Chan là gì? (Chọn nhiều)
         </label>
         <div className="space-y-2">
           {[
@@ -67,7 +67,7 @@ function Step3({ onDataChange, formData }) {
 
       {/* Favorite dish */}
       <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Món bạn thích nhất tại Chan Chan?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Có món nào Bồ muốn có thêm không?</label>
         <input
           type="text"
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"

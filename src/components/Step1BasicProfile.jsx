@@ -4,6 +4,8 @@ function Step1({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     age: formData.age || "",
     job: formData.job || "",
+    cusname: formData.cusname || "",
+    phone: formData.phone|| "",
     location: formData.location || "",
     lunchBudget: formData.lunchBudget || "",
   });
@@ -28,10 +30,21 @@ function Step1({ onDataChange, formData }) {
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-while">
         Basic Profile
       </h2>
-
+       <div>
+        <label className="block text-md font-bold text-[#60230D] mb-3">
+         Bồ vui lòng cho Chan Chan biết tên nhé ?
+        </label>
+        <input
+          type="text"
+          name="cusname"
+          value={localData.cusname}
+          onChange={handleInputChange}
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
+        />
+      </div>
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bạn bao nhiêu tuổi?
+          Bồ bao nhiêu tuổi?
         </label>
         <div className="flex flex-col justify-start items-center gap-2">
           {['18', '18–24', '25–34', '35–44', '45'].map((option) => (
@@ -52,7 +65,19 @@ function Step1({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Nghề nghiệp của bạn là gì?
+         Số điện thoại của Bồ để Chan Chan chăm sóc tốt hơn
+        </label>
+        <input
+          type="text"
+          name="phone"
+          value={localData.phone}
+          onChange={handleInputChange}
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
+        />
+      </div>
+      <div>
+        <label className="block text-md font-bold text-[#60230D] mb-3">
+          Nghề nghiệp của bồ là gì?
         </label>
         <input
           type="text"
@@ -65,7 +90,7 @@ function Step1({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bạn sống ở khu vực nào?
+          Bồ sống ở khu vực nào? (Quận, thành phố)
         </label>
         <input
           type="text"
@@ -78,7 +103,7 @@ function Step1({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bạn sẵn sàng chi bao nhiêu cho bữa trưa?
+          Bồ sẵn sàng chi bao nhiêu cho bữa trưa?
         </label>
         <input
           type="text"

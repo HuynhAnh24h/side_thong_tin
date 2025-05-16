@@ -17,7 +17,7 @@ function Step2({ onDataChange, formData }) {
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">Behavior</h2>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn đã từng đến Chan Chan bao nhiêu lần?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bồ đã từng đến Chan Chan bao nhiêu lần?</label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitCount}
@@ -31,7 +31,7 @@ function Step2({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn thường đến Chan Chan vào lúc nào?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bồ thường đến Chan Chan vào lúc nào?</label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitTime}
@@ -46,7 +46,7 @@ function Step2({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn đi vào lúc nào?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bồ thường đến Chan Chan vào lúc nào??</label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitDay}
@@ -59,7 +59,7 @@ function Step2({ onDataChange, formData }) {
       </div>
 
       <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">Bạn thường đi cùng ai?</label>
+        <label className="block text-md font-bold text-[#60230D] mb-3">Bồ thường đi cùng ai?</label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
           value={localData.visitWith}

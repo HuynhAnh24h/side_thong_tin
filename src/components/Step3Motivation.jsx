@@ -61,7 +61,6 @@ function Step3({ onDataChange, formData }) {
             </div>
           ))}
         </div>
-        <p className="block text-sm font-bold text-[#60230D]">Chọn nhiều mục nếu bạn thích.</p>
       </div>
     </div>
   );

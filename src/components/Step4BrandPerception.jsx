@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 function Step4({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
-    brandDescription: formData.brandDescription || "",
     brandDifference: formData.brandDifference || "",
     experienceRating: formData.experienceRating || "",
     recommendChanChan: formData.recommendChanChan || "",
@@ -17,20 +16,6 @@ function Step4({ onDataChange, formData }) {
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
         Brand Perception & Experience
       </h2>
-
-      <div>
-        <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bồ mô tả ChanChan bằng 3 từ nào?
-        </label>
-        <input
-          type="text"
-          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.brandDescription}
-          onChange={(e) =>
-            setLocalData({ ...localData, brandDescription: e.target.value })
-          }
-        />
-      </div>
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">

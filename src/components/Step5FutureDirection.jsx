@@ -20,7 +20,7 @@ function Step5({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Nếu Chan Chan mở thêm chi nhánh, Bồ muốn ở khu vực nào?
+          Nếu ChanChan mở thêm chi nhánh, Bồ muốn ở khu vực nào?
         </label>
         <input
           type="text"
@@ -51,7 +51,7 @@ function Step5({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bồ sẽ quan tâm nếu Chan Chan có combo theo tuần / theo tháng chứ?
+          Bồ sẽ quan tâm nếu ChanChan có combo theo tuần / theo tháng chứ?
         </label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
@@ -68,7 +68,7 @@ function Step5({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bồ muốn Chan Chan cải thiện điều gì nhất?
+          Bồ muốn ChanChan cải thiện điều gì nhất?
         </label>
         <input
           type="text"

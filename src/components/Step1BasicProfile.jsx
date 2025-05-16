@@ -32,7 +32,7 @@ function Step1({ onDataChange, formData }) {
       </h2>
        <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-         Bồ vui lòng cho Chan Chan biết tên nhé ?
+         Bồ vui lòng cho ChanChan biết tên nhé ?
         </label>
         <input
           type="text"
@@ -65,7 +65,7 @@ function Step1({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-         Số điện thoại của Bồ để Chan Chan chăm sóc tốt hơn
+         Số điện thoại của Bồ để ChanChan chăm sóc tốt hơn
         </label>
         <input
           type="text"

@@ -20,7 +20,7 @@ function Step4({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bồ mô tả Chan Chan bằng 3 từ nào?
+          Bồ mô tả ChanChan bằng 3 từ nào?
         </label>
         <input
           type="text"
@@ -34,7 +34,7 @@ function Step4({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Bồ thấy Chan Chan khác gì với các quán chay / nhà hàng khác?
+          Bồ thấy ChanChan khác gì với các quán chay / nhà hàng khác?
         </label>
         <input
           type="text"
@@ -68,7 +68,7 @@ function Step4({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-         Bồ có sẵn sàng giới thiệu Chan Chan cho người khác không?
+         Bồ có sẵn sàng giới thiệu ChanChan cho người khác không?
         </label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"

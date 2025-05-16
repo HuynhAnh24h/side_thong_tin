@@ -23,7 +23,7 @@ function Step6({ onDataChange, formData }) {
 
        <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Chan chan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?
+          Chanchan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?
         </label>
         <div className="flex flex-col justify-start items-center gap-2">
           {['Nước chanh dây xí muội','Tía tô hạt chia', 'Bánh Pudding'].map((option) => (

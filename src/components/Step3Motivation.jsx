@@ -33,7 +33,7 @@ function Step3({ onDataChange, formData }) {
       {/* Multi-checkbox reasons */}
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Lý do chính Bồ chọn Chan Chan là gì? (Chọn nhiều)
+          Lý do chính Bồ chọn ChanChan là gì? (Chọn nhiều)
         </label>
         <div className="space-y-2">
           {[

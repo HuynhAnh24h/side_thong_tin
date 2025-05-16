@@ -18,7 +18,7 @@ function Step6({ onDataChange, formData }) {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
-        Future Direction
+        ChanChan Cảm ơn
       </h2>
 
        <div>

@@ -34,6 +34,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitDay}
           onChange={(e) => setLocalData({ ...localData, visitTime: e.target.value })}
         >
+          <option value=""></option>
           <option value="Sáng">Sáng</option>
           <option value="Trưa">Trưa</option>
           <option value="Chiều">Chiều</option>

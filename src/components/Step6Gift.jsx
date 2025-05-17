@@ -19,7 +19,7 @@ function Step6({ onDataChange, formData }) {
     <h1 className="text-[#60230D] font-bold text-[20px] text-center"> Mọi góp ý của bồ là động lực để Chanchan tiếp tục phát triển</h1>
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Chanchan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?
+          Chanchan xin cảm ơn Bồ bằng món quà nhỏ. Mời Bồ chọn?
         </label>
         <div className="flex flex-col justify-start items-center gap-2">
           {[

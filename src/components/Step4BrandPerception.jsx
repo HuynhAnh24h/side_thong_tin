@@ -44,11 +44,11 @@ function Step4({ onDataChange, formData }) {
             setLocalData({ ...localData, experienceRating: e.target.value })
           }
         >
-          <option value="5">★★★★★</option>
-          <option value="4">★★★★</option>
-          <option value="3">★★★</option>
-          <option value="2">★★</option>
-          <option value="1">★</option>
+          <option value="5 sao">★★★★★</option>
+          <option value="4 sao">★★★★</option>
+          <option value="3 sao">★★★</option>
+          <option value="2 sao">★★</option>
+          <option value="1 sao">★</option>
         </select>
       </div>
 

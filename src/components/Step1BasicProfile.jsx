@@ -4,6 +4,7 @@ function Step1({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     age: formData.age || "",
     job: formData.job || "",
+    email:formData.email || "",
     cusname: formData.cusname || "",
     phone: formData.phone|| "",
     location: formData.location || "",
@@ -18,7 +19,6 @@ function Step1({ onDataChange, formData }) {
     }));
   };
 
-  // Chỉ chạy useEffect khi `localData` thay đổi, tránh vòng lặp vô hạn
   useEffect(() => {
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
@@ -32,7 +32,7 @@ function Step1({ onDataChange, formData }) {
       </h2>
        <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-         Bồ vui lòng cho ChanChan biết tên nhé ?
+         Bồ vui lòng cho ChanChan biết tên nhé?
         </label>
         <input
         required
@@ -47,8 +47,8 @@ function Step1({ onDataChange, formData }) {
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Bồ bao nhiêu tuổi?
         </label>
-        <div className="flex flex-col justify-start items-center gap-2">
-          {['18', '18–24', '25–34', '35–44', '45'].map((option) => (
+        <div className="flex justify-start items-center gap-2">
+          {['18 – 24', '25 – 34', '35 – 44', '45 +'].map((option) => (
             <label key={option} className="flex items-center gap-1 w-full">
               <input
               required
@@ -74,6 +74,19 @@ function Step1({ onDataChange, formData }) {
           type="text"
           name="phone"
           value={localData.phone}
+          onChange={handleInputChange}
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
+        />
+      </div>
+      <div>
+        <label className="block text-md font-bold text-[#60230D] mb-3">
+         Cho ChanChan email của Bồ nha                                                    
+        </label>
+        <input
+          required
+          type="email"
+          name="email"
+          value={localData.email}
           onChange={handleInputChange}
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
         />

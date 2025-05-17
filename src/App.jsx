@@ -14,7 +14,8 @@ function App() {
   }, []);
 
   // Danh sách các trường không bắt buộc
-  const excludedFields = ["suggestedImprovement", "brandDifference"]; 
+  const excludedFields = ["suggestedImprovement", "brandDifference", "visitCount","visitTime",
+    "visitWith","visitCount"," reason","interestedInCombo","experienceRating","recommendChanChan","wantsDelivery","interestedInCombo"]; 
 
   // Hàm kiểm tra dữ liệu nhập vào
   const validateForm = useCallback(() => {

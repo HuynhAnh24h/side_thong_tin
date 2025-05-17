@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 function Step4({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     brandDifference: formData.brandDifference || "",
-    experienceRating: formData.experienceRating || "",
-    recommendChanChan: formData.recommendChanChan || "",
+    experienceRating: formData.experienceRating || "5", // Giá trị mặc định là option đầu tiên
+    recommendChanChan: formData.recommendChanChan || "Rất sẵn lòng", // Giá trị mặc định
   });
 
   useEffect(() => {
-    onDataChange(localData);
-  }, [localData]);
+    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
+      onDataChange(localData);
+    }
+  }, [localData, formData]);
 
   return (
     <div className="space-y-4">
@@ -33,7 +35,7 @@ function Step4({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Trải nghiệm của Bồ hôm nay thế nào? (1–5 sao)
+          Trải nghiệm của Bồ hôm nay thế nào?
         </label>
         <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
@@ -42,7 +44,6 @@ function Step4({ onDataChange, formData }) {
             setLocalData({ ...localData, experienceRating: e.target.value })
           }
         >
-          <option value=""></option>
           <option value="5">★★★★★</option>
           <option value="4">★★★★</option>
           <option value="3">★★★</option>
@@ -62,9 +63,8 @@ function Step4({ onDataChange, formData }) {
             setLocalData({ ...localData, recommendChanChan: e.target.value })
           }
         >
-          <option value=""></option>
           <option value="Rất sẵn lòng">Vâng, rất sẵn lòng</option>
-          <option value="Chưa chắc chắn">Tôi chưa chắc chắn </option>
+          <option value="Chưa chắc chắn">Tôi chưa chắc chắn</option>
           <option value="Không giới thiệu">Tôi sẽ không giới thiệu</option>
         </select>
       </div>

@@ -2,20 +2,18 @@ import { useEffect, useState } from "react";
 
 function Step3({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
-    reason: formData.reason || "", // Lưu giá trị chọn từ Select
+    reason: formData.reason || "Món ăn ngon", // Đặt giá trị mặc định là option đầu tiên
   });
 
   useEffect(() => {
-    setLocalData({
-      reason: formData.reason || "",
-    });
-  }, [formData]);
+    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
+      onDataChange(localData);
+    }
+  }, [localData, formData]); // Loại bỏ `setLocalData` trong dependency
 
-  // Hàm xử lý khi chọn giá trị từ Select
+  // Xử lý thay đổi giá trị từ select
   const handleSelectChange = (e) => {
-    const selectedValue = e.target.value;
-    setLocalData({ reason: selectedValue });
-    onDataChange({ reason: selectedValue }); // Truyền dữ liệu lên App.js ngay lập tức
+    setLocalData({ reason: e.target.value });
   };
 
   return (
@@ -34,7 +32,6 @@ function Step3({ onDataChange, formData }) {
           onChange={handleSelectChange}
           className="w-full p-2 border border-gray-300 rounded"
         >
-          <option value=""></option>
           <option value="Món ăn ngon">Món ăn ngon</option>
           <option value="Không gian">Không gian</option>
           <option value="Thiết kế">Thiết kế</option>

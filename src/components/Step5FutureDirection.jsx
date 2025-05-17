@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 function Step5({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     preferredLocation: formData.preferredLocation || "",
-    wantsDelivery: formData.wantsDelivery || "",
-    interestedInCombo: formData.interestedInCombo || "",
+    wantsDelivery: formData.wantsDelivery || "Giao hàng", // Đặt giá trị mặc định
+    interestedInCombo: formData.interestedInCombo || "Quan tâm combo", // Đặt giá trị mặc định
     suggestedImprovement: formData.suggestedImprovement || "",
   });
 
   useEffect(() => {
-    onDataChange(localData);
-  }, [localData]);
+    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
+      onDataChange(localData);
+    }
+  }, [localData, formData]);
 
   return (
     <div className="space-y-4">
@@ -43,7 +45,6 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, wantsDelivery: e.target.value })
           }
         >
-          <option value=""></option>
           <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
           <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
         </select>
@@ -60,7 +61,6 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, interestedInCombo: e.target.value })
           }
         >
-          <option value=""></option>
           <option value="Quan tâm combo">Có</option>
           <option value="Không quan tâm combo">Không</option>
         </select>

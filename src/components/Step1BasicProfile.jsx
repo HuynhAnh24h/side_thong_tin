@@ -84,7 +84,7 @@ function Step1({ onDataChange, formData }) {
         </label>
         <input
           required
-          type="email"
+          type="text"
           name="email"
           value={localData.email}
           onChange={handleInputChange}

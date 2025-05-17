@@ -5,7 +5,7 @@ function Step5({ onDataChange, formData }) {
     preferredLocation: formData.preferredLocation || "",
     wantsDelivery: formData.wantsDelivery || "",
     interestedInCombo: formData.interestedInCombo || "",
-    suggestedImprovement: formData.suggestedImprovement || "",
+    suggestedImprovement: formData.suggestedImprovement || "Không trả lời",
   });
 
   useEffect(() => {
@@ -43,7 +43,6 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, wantsDelivery: e.target.value })
           }
         >
-          <option value="Chưa trả lời">--Chọn--</option>
           <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
           <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
         </select>
@@ -60,7 +59,6 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, interestedInCombo: e.target.value })
           }
         >
-          <option value="Chưa trả lời">--Chọn--</option>
           <option value="Quan tâm combo">Có</option>
           <option value="Không quan tâm combo">Không</option>
         </select>

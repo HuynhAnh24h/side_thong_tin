@@ -35,6 +35,7 @@ function Step1({ onDataChange, formData }) {
          Bồ vui lòng cho ChanChan biết tên nhé ?
         </label>
         <input
+        required
           type="text"
           name="cusname"
           value={localData.cusname}
@@ -50,6 +51,7 @@ function Step1({ onDataChange, formData }) {
           {['18', '18–24', '25–34', '35–44', '45'].map((option) => (
             <label key={option} className="flex items-center gap-1 w-full">
               <input
+              required
                 type="radio"
                 name="age"
                 value={option}
@@ -68,6 +70,7 @@ function Step1({ onDataChange, formData }) {
          Số điện thoại của Bồ để ChanChan chăm sóc tốt hơn
         </label>
         <input
+          required
           type="text"
           name="phone"
           value={localData.phone}
@@ -80,6 +83,7 @@ function Step1({ onDataChange, formData }) {
           Nghề nghiệp của bồ là gì?
         </label>
         <input
+          required
           type="text"
           name="job"
           value={localData.job}
@@ -93,6 +97,7 @@ function Step1({ onDataChange, formData }) {
           Bồ sống ở khu vực nào? (Quận, thành phố)
         </label>
         <input
+          required
           type="text"
           name="location"
           value={localData.location}
@@ -106,6 +111,7 @@ function Step1({ onDataChange, formData }) {
           Bồ sẵn sàng chi bao nhiêu cho bữa trưa?
         </label>
         <input
+          required
           type="text"
           name="lunchBudget"
           value={localData.lunchBudget}

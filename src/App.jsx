@@ -1,5 +1,6 @@
 import { Step1, Step2, Step3, Step4, Step5, Step6, Success } from "./components";
 import { useState, useCallback, useMemo } from "react";
+import bgImage from "./assets/bgMain.png";
 import logo from "./assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
@@ -14,10 +15,9 @@ function App() {
   }, []);
 
   // Danh sách các trường không bắt buộc
-  const excludedFields = ["suggestedImprovement", "brandDifference", "visitCount","visitTime",
-    "visitWith","visitCount"," reason","interestedInCombo","experienceRating","recommendChanChan","wantsDelivery","interestedInCombo"]; 
+  const excludedFields = ["suggestedImprovement", "brandDifference"]; 
 
-  // Hàm kiểm tra dữ liệu nhập vào
+  // Hàm kiểm tra dữ liệu nhập vào (bao gồm select options)
   const validateForm = useCallback(() => {
     const requiredFields = Object.keys(formData).filter((field) => !excludedFields.includes(field));
 
@@ -29,8 +29,8 @@ function App() {
         return false;
       }
 
-      // Kiểm tra nếu là Select Options
-      if (typeof value === "object" && (!value || value.value === "")) {
+      // Kiểm tra nếu là select (giá trị không được là null hoặc undefined)
+      if (typeof value === "object" && value === null) {
         return false;
       }
     }
@@ -60,9 +60,8 @@ function App() {
       return acc;
     }, {});
 
-    console.log("Dữ liệu chuẩn bị gửi:", processedFormData);
-
     setStep(1);
+    console.log(processedFormData); // Kiểm tra dữ liệu trước khi gửi
     toast.success("Gửi thành công!");
     setFormData({});
     setIsSuccess(true);
@@ -70,7 +69,7 @@ function App() {
     try {
       const response = await fetch("https://member.sayaka.vn/api/survey", {
         method: "POST",
-        body: JSON.stringify(processedFormData),
+        body: JSON.stringify(processedFormData), // Gửi dữ liệu đã xử lý
         headers: {
           "Content-Type": "application/json",
         },
@@ -124,7 +123,7 @@ function App() {
               {step < 6 && (
                 <button
                   onClick={nextStep}
-                  disabled={!isValid} // Vô hiệu hóa nếu chưa nhập đủ thông tin
+                  disabled={!isValid} // Vô hiệu hóa khi chưa nhập đủ thông tin
                   className={`uppercase font-bold text-white px-4 py-2 rounded ${
                     isValid ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
                   }`}
@@ -132,13 +131,10 @@ function App() {
                   Tiếp theo
                 </button>
               )}
-              {step === 6 && (
+              {step === 6 && isValid && (
                 <button
                   onClick={handleSubmit}
-                  disabled={!isValid} // Kiểm tra trước khi gửi
-                  className={`uppercase font-bold text-white px-4 py-2 rounded ${
-                    isValid ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
-                  }`}
+                  className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer"
                 >
                   Gửi
                 </button>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function Step3({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     reasons: formData.reasons || [], // đa chọn
-    favoriteDish: formData.favoriteDish || "",
+    favoriteDish: formData.favoriteDish || "Chưa trả lời",
   });
 
   const handleCheckboxChange = (e) => {

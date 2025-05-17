@@ -5,7 +5,7 @@ function Step5({ onDataChange, formData }) {
     preferredLocation: formData.preferredLocation || "",
     wantsDelivery: formData.wantsDelivery || "",
     interestedInCombo: formData.interestedInCombo || "",
-    suggestedImprovement: formData.suggestedImprovement || "Không trả lời",
+    suggestedImprovement: formData.suggestedImprovement || "",
   });
 
   useEffect(() => {

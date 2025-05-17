@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function Step4({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
-    brandDifference: formData.brandDifference || "Không trả lời",
+    brandDifference: formData.brandDifference || "",
     experienceRating: formData.experienceRating || "",
     recommendChanChan: formData.recommendChanChan || "",
   });

@@ -2,27 +2,21 @@ import { useEffect, useState } from "react";
 
 function Step3({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
-    reasons: formData.reasons || [], // đa chọn
-    favoriteDish: formData.favoriteDish || "Chưa trả lời",
+    reason: formData.reason || "", // Lưu giá trị chọn từ Select
   });
 
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    setLocalData((prev) => {
-      const newReasons = checked
-        ? [...prev.reasons, value]
-        : prev.reasons.filter((reason) => reason !== value);
-
-      return {
-        ...prev,
-        reasons: newReasons,
-      };
-    });
-  };
-
   useEffect(() => {
-    onDataChange(localData);
-  }, [localData, onDataChange]);
+    setLocalData({
+      reason: formData.reason || "",
+    });
+  }, [formData]);
+
+  // Hàm xử lý khi chọn giá trị từ Select
+  const handleSelectChange = (e) => {
+    const selectedValue = e.target.value;
+    setLocalData({ reason: selectedValue });
+    onDataChange({ reason: selectedValue }); // Truyền dữ liệu lên App.js ngay lập tức
+  };
 
   return (
     <div className="space-y-4">
@@ -30,37 +24,29 @@ function Step3({ onDataChange, formData }) {
         Motivation & Preferences
       </h2>
 
-      {/* Multi-checkbox reasons */}
+      {/* Select Reason */}
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Lý do chính Bồ chọn ChanChan là gì? 
+          Lý do chính Bồ chọn ChanChan là gì?
         </label>
-        <div className="space-y-2">
-          {[
-            "Món ăn ngon",
-            "Không gian",
-            "Thiết kế",
-            "Ăn chay",
-            "Ăn thuần chay",
-            "Giá cả hợp lý",
-            "Dễ đi lại",
-            "Gần nhà",
-            "Gần chỗ làm",
-            "Thương hiệu",
-            "Qua Online",
-          ].map((reason) => (
-            <div key={reason} className="flex items-center">
-              <input
-                type="checkbox"
-                value={reason}
-                checked={localData.reasons.includes(reason)}
-                onChange={handleCheckboxChange}
-                className="mr-2 b"
-              />
-              <label className="text-sm font-bold text-[#60230D]">{reason}</label>
-            </div>
-          ))}
-        </div>
+        <select
+          value={localData.reason}
+          onChange={handleSelectChange}
+          className="w-full p-2 border border-gray-300 rounded"
+        >
+          <option value="">-- Chọn một lý do --</option>
+          <option value="Món ăn ngon">Món ăn ngon</option>
+          <option value="Không gian">Không gian</option>
+          <option value="Thiết kế">Thiết kế</option>
+          <option value="Ăn chay">Ăn chay</option>
+          <option value="Ăn thuần chay">Ăn thuần chay</option>
+          <option value="Giá cả hợp lý">Giá cả hợp lý</option>
+          <option value="Dễ đi lại">Dễ đi lại</option>
+          <option value="Gần nhà">Gần nhà</option>
+          <option value="Gần chỗ làm">Gần chỗ làm</option>
+          <option value="Thương hiệu">Thương hiệu</option>
+          <option value="Qua Online">Qua Online</option>
+        </select>
       </div>
     </div>
   );

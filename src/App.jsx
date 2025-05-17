@@ -97,7 +97,7 @@ function App() {
   );
 
   return (
-    <div className="mx-auto h-[100vh] flex flex-col justify-center items-center bg-amber-50]">
+    <div className="mx-auto h-auto flex flex-col justify-center items-center bg-amber-50]">
       <div className="max-w-md bg-white rounded-md shadow-sm p-10 flex flex-col items-center justify-start">
         <div className="flex justify-center items-center mb-5">
           <div className="w-[150px] h-[150px]">

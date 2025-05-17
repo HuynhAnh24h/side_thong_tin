@@ -15,10 +15,8 @@ function Step6({ onDataChange, formData }) {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
-        ChanChan cảm ơn 
-      </h2>
-
+    <h1 className="text-[#60230D] font-bold text-[20px] text-center"> Cảm ơn bồ đã tham gia khảo sát</h1>
+    <h1 className="text-[#60230D] font-bold text-[20px] text-center"> Mọi góp ý của bồ là động lực để Chanchan tiếp tục phát triển</h1>
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Chanchan xin cảm ơn bồ bằng món quà nhỏ. Mời Bồ chọn?

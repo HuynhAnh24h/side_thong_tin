@@ -34,7 +34,6 @@ function Step3({ onDataChange, formData }) {
           onChange={handleSelectChange}
           className="w-full p-2 border border-gray-300 rounded"
         >
-          <option value="">-- Chọn một lý do --</option>
           <option value="Món ăn ngon">Món ăn ngon</option>
           <option value="Không gian">Không gian</option>
           <option value="Thiết kế">Thiết kế</option>

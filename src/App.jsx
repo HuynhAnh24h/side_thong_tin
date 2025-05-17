@@ -16,7 +16,7 @@ function App() {
   // Danh sách các trường không bắt buộc
   const excludedFields = ["suggestedImprovement", "brandDifference"]; 
 
-  // Hàm kiểm tra dữ liệu nhập vào (bao gồm Select Options)
+  // Hàm kiểm tra dữ liệu nhập vào
   const validateForm = useCallback(() => {
     const requiredFields = Object.keys(formData).filter((field) => !excludedFields.includes(field));
 
@@ -25,6 +25,11 @@ function App() {
 
       // Kiểm tra nếu là chuỗi thì cắt bỏ khoảng trắng
       if (!value || (typeof value === "string" && value.trim() === "")) {
+        return false;
+      }
+
+      // Kiểm tra nếu là Select Options
+      if (typeof value === "object" && (!value || value.value === "")) {
         return false;
       }
     }
@@ -54,8 +59,9 @@ function App() {
       return acc;
     }, {});
 
+    console.log("Dữ liệu chuẩn bị gửi:", processedFormData);
+
     setStep(1);
-    console.log(processedFormData); // Kiểm tra dữ liệu trước khi gửi
     toast.success("Gửi thành công!");
     setFormData({});
     setIsSuccess(true);
@@ -63,7 +69,7 @@ function App() {
     try {
       const response = await fetch("https://member.sayaka.vn/api/survey", {
         method: "POST",
-        body: JSON.stringify(processedFormData), // Gửi dữ liệu đã xử lý
+        body: JSON.stringify(processedFormData),
         headers: {
           "Content-Type": "application/json",
         },

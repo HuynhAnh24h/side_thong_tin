@@ -41,9 +41,9 @@ function App() {
           formData.cusname !== "" &&
           formData.location !== "" &&
           formData.lunchBudget !== "" && phoneLength === 10 && startWithZero === "0" && typeNumber > 0) {
-          validate(true)
+          setValidate(true)
         } else {
-          validate(false)
+          setValidate(false)
         }
         break
       case 2:
@@ -82,19 +82,17 @@ function App() {
           setValidate(true)
         }
         break
+      
     }
     setStep((prev) => Math.max(prev - 1, 1));
   }, []);
-  
+
   const handleSubmit = async () => {
     setStep(1);
     toast.success("Gửi thành công!");
     setIsSuccess(true);
     setFormData({});
-
-
     try {
-      console.log(processedFormData)
       const response = await fetch("https://member.sayaka.vn/api/survey", {
         method: "POST",
         body: JSON.stringify(formData), // Gửi dữ liệu đã xử lý

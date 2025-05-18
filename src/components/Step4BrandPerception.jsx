@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 function Step4({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     brandDifference: formData.brandDifference || "",
-    experienceRating: formData.experienceRating || "5", // Giá trị mặc định là option đầu tiên
-    recommendChanChan: formData.recommendChanChan || "Rất sẵn lòng", // Giá trị mặc định
+    experienceRating: formData.experienceRating || "", // Giá trị mặc định là option đầu tiên
+    recommendChanChan: formData.recommendChanChan || "", // Giá trị mặc định
   });
 
   useEffect(() => {

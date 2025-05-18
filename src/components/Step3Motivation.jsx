@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function Step3({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
-    reason: formData.reason || "Món ăn ngon", // Đặt giá trị mặc định là option đầu tiên
+    reason: formData.reason || "", // Đặt giá trị mặc định là option đầu tiên
   });
 
   useEffect(() => {

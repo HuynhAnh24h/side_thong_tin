@@ -69,7 +69,7 @@ function App() {
         }
         break
       case 5:
-        if (formData.preferredLocation !== "" && formData.wantsDelivery !== "" && formData.interestedInCombo !== "" && formData.suggestedImprovement !== "") {
+        if (formData.preferredLocation !== "" && formData.wantsDelivery !== "" && formData.interestedInCombo !== "") {
           setValidate(true)
         } else {
           setValidate(false)
@@ -92,6 +92,12 @@ function App() {
     toast.success("Gửi thành công!");
     setIsSuccess(true);
     setFormData({});
+    if(formData.suggestedImprovement === ""){
+      formData.suggestedImprovement = "Không trả lời"
+    }
+    if(formData.brandDifference === ""){
+      formData.brandDifference = "Không trả lời"
+    }
     try {
       const response = await fetch("https://member.sayaka.vn/api/survey", {
         method: "POST",

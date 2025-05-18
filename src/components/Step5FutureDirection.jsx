@@ -10,18 +10,18 @@ function Step5({ onDataChange, formData, validate }) {
   });
 
   useEffect(() => {
-    if (formData.preferredLocation !== "" && formData.wantsDelivery !== "" && formData.interestedInCombo !== "" && formData.suggestedImprovement !== "") {
+    if (formData.preferredLocation !== "" && formData.wantsDelivery !== "" && formData.interestedInCombo !== "") {
       validate(true)
     } else {
       validate(false)
     }
 
     if (formData.preferredLocation == "") {
-      setErrorData("Bồ chưa chọn chi nhánh muốn thêm")
+      setErrorData("Bồ chưa chọn khu vực muốn ChanChan mở thêm chi nhánh")
     } else if (formData.wantsDelivery == "") {
       setErrorData("Bồ chưa trả lời có muốn đặt hàng Online không?")
     } else if (formData.interestedInCombo == "") {
-      setErrorData("Bồ chưa chọn có quan tâm combo không?")
+      setErrorData("Bồ chưa chọn quan tâm combo không?")
     } else {
       setErrorData("")
     }

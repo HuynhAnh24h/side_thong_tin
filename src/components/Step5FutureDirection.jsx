@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Step5({ onDataChange, formData, validate }) {
+  const [errorData, setErrorData] = useState("")
   const [localData, setLocalData] = useState({
     preferredLocation: formData.preferredLocation || "",
     wantsDelivery: formData.wantsDelivery || "", // Đặt giá trị mặc định
@@ -9,12 +10,23 @@ function Step5({ onDataChange, formData, validate }) {
   });
 
   useEffect(() => {
-    if(formData.preferredLocation !== "" && formData.wantsDelivery !=="" && formData.interestedInCombo !== "" &&formData.suggestedImprovement !== "")
-    {
+    if (formData.preferredLocation !== "" && formData.wantsDelivery !== "" && formData.interestedInCombo !== "" && formData.suggestedImprovement !== "") {
       validate(true)
-    }else{
+    } else {
       validate(false)
     }
+
+    if (formData.preferredLocation == "") {
+      setErrorData("Bồ chưa chọn chi nhánh muốn thêm")
+    } else if (formData.wantsDelivery == "") {
+      setErrorData("Bồ chưa trả lời có muốn đặt hàng Online không?")
+    } else if (formData.interestedInCombo == "") {
+      setErrorData("Bồ chưa chọn có quan tâm combo không?")
+    } else {
+      setErrorData("")
+    }
+
+
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
@@ -30,14 +42,58 @@ function Step5({ onDataChange, formData, validate }) {
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Nếu ChanChan mở thêm chi nhánh, Bồ muốn ở khu vực nào?
         </label>
-        <input
-          type="text"
+        <select
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.preferredLocation}
+          value={localData.wantsDelivery}
           onChange={(e) =>
-            setLocalData({ ...localData, preferredLocation: e.target.value })
+            etLocalData({ ...localData, preferredLocation: e.target.value })
           }
-        />
+        >
+          <option value="">Chọn</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
+          
+        </select>
       </div>
 
       <div>
@@ -87,6 +143,7 @@ function Step5({ onDataChange, formData, validate }) {
           }
         />
       </div>
+      <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
   );
 }

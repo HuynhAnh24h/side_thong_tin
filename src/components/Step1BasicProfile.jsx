@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 function Step1({ onDataChange, formData, validate }) {
 
+  const [errorData, setErrorData] = useState("")
+   
   const [localData, setLocalData] = useState({
     age: formData.age || "",
     job: formData.job || "",
@@ -26,11 +28,45 @@ function Step1({ onDataChange, formData, validate }) {
     } else {
       validate(false)
     }
+    if(formData.cusname === ""){
+      setErrorData("Bồ chưa nhập tên")
+    }
+    else if(formData.age === ""){
+      setErrorData("Bồ chưa nhập tuổi")
+    }
+    else if(phoneLength === 0){
+      setErrorData("Bồ chưa nhập số điện thoại")
+    }
+    else if(startWithZero !== "0"){
+      setErrorData("Số điện thoại phải bắt đầu bằng 0")
+    }
+    else if(phoneLength !== 10){
+      setErrorData("Số điện thoại phải là 10 ký tự")
+    }
+    else if(!typeNumber){
+      setErrorData("Số điện thoại không bao gồm chữ")
+    }
+    else if(formData.email === ""){
+      setErrorData("Bồ chưa nhập Email")
+    }
+    else if(formData.job === ""){
+      setErrorData("Bồ chưa nhập Nghề nghiệp")
+    }
+    else if(formData.location === ""){
+      setErrorData("Bồ chưa nhập địa chỉ")
+    }
+    else if(formData.lunchBudget === ""){
+      setErrorData("Bồ chưa nhập chi phí cho buổi trưa")
+    }
+    else {
+      setErrorData("")
+    }
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
   }, [localData, formData]);
 
+ 
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-while">
@@ -72,6 +108,7 @@ function Step1({ onDataChange, formData, validate }) {
       </div>
 
       <div>
+     
         <label className="block text-md font-bold text-[#60230D] mb-3">
           Số điện thoại của Bồ để ChanChan chăm sóc tốt hơn
         </label>
@@ -83,6 +120,8 @@ function Step1({ onDataChange, formData, validate }) {
           onChange={(e) => setLocalData({ ...localData, phone: e.target.value })}
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
         />
+         <span>{
+          }</span>
       </div>
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
@@ -138,6 +177,8 @@ function Step1({ onDataChange, formData, validate }) {
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
         />
       </div>
+
+      <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Step3({ onDataChange, formData,validate }) {
+  const [errorData, setErrorData] = useState("")
   const [localData, setLocalData] = useState({
     reason: formData.reason || "", // Đặt giá trị mặc định là option đầu tiên
   });
@@ -11,6 +12,15 @@ function Step3({ onDataChange, formData,validate }) {
     }else{
       validate(false)
     }
+
+     if(formData.reason == ""  ){
+      setErrorData("Bồ chọn 1 lý do")
+    }else{
+      setErrorData("")
+    }
+
+
+
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
@@ -51,6 +61,8 @@ function Step3({ onDataChange, formData,validate }) {
           <option value="Qua Online">Qua Online</option>
         </select>
       </div>
+
+      <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
   );
 }

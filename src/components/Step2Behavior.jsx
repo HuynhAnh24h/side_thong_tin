@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Step2({ onDataChange, formData, validate }) {
+  const [errorData, setErrorData] = useState("")
   const [localData, setLocalData] = useState({
     visitCount: formData.visitCount || "",
     visitTime: formData.visitTime || "",
@@ -12,6 +13,20 @@ function Step2({ onDataChange, formData, validate }) {
     }else{
       validate(false)
     }
+
+    if(formData.visitCount == ""  ){
+      setErrorData("Bồ chưa chọn số lần đến")
+    }else if(formData.visitTime == ""){
+      setErrorData("Bồ chưa chọn thời thời gian thường đến ChanChan")
+    }else if(formData.visitWith == ""){
+      setErrorData("Bồ chưa chọn đi cùng ai")
+    }else{
+      setErrorData("")
+    }
+
+
+
+
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
@@ -72,6 +87,7 @@ function Step2({ onDataChange, formData, validate }) {
           <option value="Đồng nghiệp">Đồng nghiệp</option>
         </select>
       </div>
+      <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
   );
 }

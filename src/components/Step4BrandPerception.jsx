@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Step4({ onDataChange, formData, validate }) {
+  const [errorData, setErrorData] = useState("")
   const [localData, setLocalData] = useState({
     brandDifference: formData.brandDifference || "",
     experienceRating: formData.experienceRating || "", // Giá trị mặc định là option đầu tiên
@@ -13,6 +14,16 @@ function Step4({ onDataChange, formData, validate }) {
     }else{
       validate(false)
     }
+
+     if(formData.experienceRating == ""  ){
+      setErrorData("Bồ chưa đánh giá")
+    }else if(formData.recommendChanChan == ""  ){
+      setErrorData("Bồ chưa chọn giới thiện Chan Chan")
+    }else{
+      setErrorData("")
+    }
+
+
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
@@ -75,6 +86,7 @@ function Step4({ onDataChange, formData, validate }) {
           <option value="Không giới thiệu">Tôi sẽ không giới thiệu</option>
         </select>
       </div>
+      <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
   );
 }

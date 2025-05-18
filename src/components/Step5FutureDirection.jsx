@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 function Step5({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
     preferredLocation: formData.preferredLocation || "",
-    wantsDelivery: formData.wantsDelivery || "Giao hàng", // Đặt giá trị mặc định
-    interestedInCombo: formData.interestedInCombo || "Quan tâm combo", // Đặt giá trị mặc định
+    wantsDelivery: formData.wantsDelivery || "", // Đặt giá trị mặc định
+    interestedInCombo: formData.interestedInCombo || "", // Đặt giá trị mặc định
     suggestedImprovement: formData.suggestedImprovement || "",
   });
 
@@ -45,6 +45,7 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, wantsDelivery: e.target.value })
           }
         >
+          <option value="">Chọn</option>
           <option value="Giao hàng">Có, tôi muốn giao hàng tận nơi</option>
           <option value="Không giao hàng">Không, tôi không muốn giao hàng</option>
         </select>
@@ -61,6 +62,7 @@ function Step5({ onDataChange, formData }) {
             setLocalData({ ...localData, interestedInCombo: e.target.value })
           }
         >
+          <option value="">Chọn</option>
           <option value="Quan tâm combo">Có</option>
           <option value="Không quan tâm combo">Không</option>
         </select>

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 function Step2({ onDataChange, formData }) {
   const [localData, setLocalData] = useState({
-    visitCount: formData.visitCount || "Lần đầu",
-    visitTime: formData.visitTime || "Sáng",
-    visitWith: formData.visitWith || "Một mình",
+    visitCount: formData.visitCount || "",
+    visitTime: formData.visitTime || "",
+    visitWith: formData.visitWith || "",
   });
 
   useEffect(() => {
@@ -28,6 +28,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitCount}
           onChange={(e) => setLocalData({ ...localData, visitCount: e.target.value })}
         >
+          <option value="">Chọn</option>
           <option value="Lần đầu">Lần đầu</option>
           <option value="2 - 5 lần">2–5 lần</option>
           <option value="Thường xuyên">Thường xuyên (1 lần/tuần hoặc hơn)</option>
@@ -43,6 +44,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitTime}  // Sửa lại giá trị đúng biến trạng thái
           onChange={(e) => setLocalData({ ...localData, visitTime: e.target.value })}
         >
+          <option value="">Chọn</option>
           <option value="Sáng">Sáng</option>
           <option value="Trưa">Trưa</option>
           <option value="Chiều">Chiều</option>
@@ -59,6 +61,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitWith}
           onChange={(e) => setLocalData({ ...localData, visitWith: e.target.value })}
         >
+          <option value="">Chọn</option>
           <option value="Một mình">Một mình</option>
           <option value="Bạn bè">Bạn bè</option>
           <option value="Gia đình">Gia đình</option>

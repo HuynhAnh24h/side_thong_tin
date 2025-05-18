@@ -91,7 +91,7 @@ function Step1({ onDataChange, formData }) {
           Cho ChanChan email của Bồ nha
         </label>
         <input
-          type="text"
+          type="email"
           name="email"
           value={localData.email}
           onChange={handleInputChange}

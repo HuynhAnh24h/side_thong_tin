@@ -9,27 +9,32 @@ function App() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState(() => JSON.parse(localStorage.getItem("formData")) || {});
   const [isValid, setIsValid] = useState(false);
+  const [isPhoneValid, setIsPhoneValid] = useState(true); // Thêm trạng thái kiểm tra số điện thoại
 
   const excludedFields = ["suggestedImprovement", "brandDifference"]; 
 
-  // Cập nhật dữ liệu vào localStorage mỗi khi formData thay đổi
+  const validatePhone = (phone) => {
+    const phoneRegex = /^(0[3|5|7|8|9])([0-9]{8})$/;
+    return phoneRegex.test(phone);
+  };
+
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
 
-  // Kiểm tra dữ liệu hợp lệ
   useEffect(() => {
+    console.log("Dữ liệu nhập vào:", formData); // Log dữ liệu để kiểm tra
+
     if (Object.keys(formData).length === 0) {
-    setIsValid(false);
-    return;
-  }
+      setIsValid(false);
+      return;
+    }
 
-  const requiredFields = Object.keys(formData).filter(field => !excludedFields.includes(field));
-  
-  // Kiểm tra cả trường input và select
-  const isFormValid = requiredFields.every(field => formData[field]?.trim() && formData[field] !== ""); 
+    const requiredFields = Object.keys(formData).filter(field => !excludedFields.includes(field));
+    const isFormValid = requiredFields.every(field => formData[field]?.trim() && formData[field] !== "");
 
-  setIsValid(isFormValid);
+    setIsPhoneValid(validatePhone(formData.phone)); // Kiểm tra số điện thoại riêng
+    setIsValid(isFormValid);
   }, [formData]);
 
   const handleDataChange = useCallback((newData) => {
@@ -37,12 +42,17 @@ function App() {
   }, []);
 
   const nextStep = useCallback(() => {
-    if (isValid) {
-      setStep(prev => Math.min(prev + 1, 6));
-    } else {
+    if (!isValid) {
       toast.error("Vui lòng điền đầy đủ thông tin trước khi tiếp tục!");
+      return;
     }
-  }, [isValid]);
+
+    if (!isPhoneValid) {
+      toast.warning("Số điện thoại chưa hợp lệ, vui lòng kiểm tra lại.");
+    }
+
+    setStep(prev => Math.min(prev + 1, 6));
+  }, [isValid, isPhoneValid]);
 
   const prevStep = useCallback(() => {
     setStep(prev => Math.max(prev - 1, 1));

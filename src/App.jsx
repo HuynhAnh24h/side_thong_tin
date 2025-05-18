@@ -10,7 +10,6 @@ function App() {
   const [formData, setFormData] = useState(() => JSON.parse(localStorage.getItem("formData")) || {});
   const [isValid, setIsValid] = useState(false);
 
-  const excludedFields = ["suggestedImprovement", "brandDifference"]; 
 
   // Kiểm tra số điện thoại hợp lệ (định dạng Việt Nam)
   const validatePhone = (phone) => {

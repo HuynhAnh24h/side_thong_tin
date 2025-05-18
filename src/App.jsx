@@ -88,6 +88,7 @@ function App() {
   }, []);
 
   const handleSubmit = async () => {
+    console.log(formData)
     setStep(1);
     toast.success("Gửi thành công!");
     setIsSuccess(true);

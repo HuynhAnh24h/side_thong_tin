@@ -138,7 +138,7 @@ function Step1({ onDataChange, formData, validate }) {
       </div>
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-          Nghề nghiệp của bồ là gì?
+          Nghề nghiệp của Bồ là gì?
         </label>
         <input
           required

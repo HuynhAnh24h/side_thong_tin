@@ -1,27 +1,17 @@
 import { useEffect, useState } from "react";
 
 function Step2({ onDataChange, formData }) {
-  // Khởi tạo state local với dữ liệu từ formData
-  const [localData, setLocalData] = useState(() => ({
+  const [localData, setLocalData] = useState({
     visitCount: formData.visitCount || "",
     visitTime: formData.visitTime || "",
     visitWith: formData.visitWith || "",
-  }));
+  });
 
-  // Đồng bộ dữ liệu từ formData khi bước thay đổi
   useEffect(() => {
-    setLocalData(formData);
-  }, [formData]);
-
-  // Cập nhật dữ liệu ngay lập tức khi thay đổi
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setLocalData((prev) => {
-      const updatedData = { ...prev, [name]: value };
-      onDataChange(updatedData); // Gửi dữ liệu lên component cha ngay lập tức
-      return updatedData;
-    });
-  };
+    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
+      onDataChange(localData);
+    }
+  }, [localData, formData]);
 
   return (
     <div className="space-y-4">
@@ -34,10 +24,9 @@ function Step2({ onDataChange, formData }) {
           Bồ đã từng đến ChanChan bao nhiêu lần?
         </label>
         <select
-          name="visitCount"
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.visitCount || ""}
-          onChange={handleInputChange}
+          value={localData.visitCount}
+          onChange={(e) => setLocalData({ ...localData, visitCount: e.target.value })}
         >
           <option value="">Chọn</option>
           <option value="Lần đầu">Lần đầu</option>
@@ -51,10 +40,9 @@ function Step2({ onDataChange, formData }) {
           Bồ thường đến ChanChan vào khung giờ nào?
         </label>
         <select
-          name="visitTime"
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.visitTime || ""}
-          onChange={handleInputChange}
+          value={localData.visitTime}  // Sửa lại giá trị đúng biến trạng thái
+          onChange={(e) => setLocalData({ ...localData, visitTime: e.target.value })}
         >
           <option value="">Chọn</option>
           <option value="Sáng">Sáng</option>
@@ -69,10 +57,9 @@ function Step2({ onDataChange, formData }) {
           Bồ thường đi cùng ai?
         </label>
         <select
-          name="visitWith"
           className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.visitWith || ""}
-          onChange={handleInputChange}
+          value={localData.visitWith}
+          onChange={(e) => setLocalData({ ...localData, visitWith: e.target.value })}
         >
           <option value="">Chọn</option>
           <option value="Một mình">Một mình</option>

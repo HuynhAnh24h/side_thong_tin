@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Step1({ onDataChange, formData }) {
+function Step1({ onDataChange, formData}) {
   const [localData, setLocalData] = useState({
     age: formData.age || "",
     job: formData.job || "",
@@ -18,6 +18,7 @@ function Step1({ onDataChange, formData }) {
       [name]: value,
     }));
   };
+    
 
   useEffect(() => {
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
@@ -84,7 +85,7 @@ function Step1({ onDataChange, formData }) {
         </label>
         <input
           required
-          type="text"
+          type="email"
           name="email"
           value={localData.email}
           onChange={handleInputChange}

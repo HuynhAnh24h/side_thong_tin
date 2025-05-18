@@ -4,47 +4,42 @@ import logo from "./assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
 
+
 function App() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
-
-  const handleDataChange = useCallback((newData) => {
-    setFormData((prev) => ({ ...prev, ...newData }));
-  }, []);
-
-  // Danh sách các trường không bắt buộc
-  const excludedFields = ["suggestedImprovement", "brandDifference"]; 
-
-  // Hàm kiểm tra dữ liệu nhập vào (bao gồm select options)
-  const validateForm = useCallback(() => {
-    const requiredFields = Object.keys(formData).filter((field) => !excludedFields.includes(field));
-
-    for (const field of requiredFields) {
-      const value = formData[field];
-
-      // Kiểm tra nếu là chuỗi thì cắt bỏ khoảng trắng
-      if (!value || (typeof value === "string" && value.trim() === "")) {
-        return false;
-      }
-
-      // Kiểm tra nếu là select (giá trị không được là null hoặc undefined)
-      if (typeof value === "object" && value === null) {
-        return false;
-      }
+  const [validate,setValidate] = useState(false)
+const handleDataChange = useCallback((newData) => {
+  setFormData((prev) => {
+    // Kiểm tra nếu có ít nhất một key thay đổi
+    const hasChanges = Object.keys(newData).some((key) => prev[key] !== newData[key]);
+    switch(step){
+      case 1:
+        if(formData.age !== ""&&
+            formData.job !== ""&&
+            formData.email !== ""&&
+            formData.cusname !== ""&&
+            formData.phone!== ""&&
+            formData.location !== ""&&
+            formData.lunchBudget !== ""){
+              setValidate(true)
+            }else{
+              setValidate(false)
+            }
+        break
     }
+    if (!hasChanges) return prev; // Nếu không có thay đổi, giữ nguyên state
+    return { ...prev, ...newData };
+  });
 
-    return true;
-  }, [formData]);
+}, []);
+console.log(handleDataChange)
 
   // Trạng thái xác nhận form hợp lệ
-  const isValid = useMemo(() => validateForm(), [formData]);
-
   const nextStep = useCallback(() => {
-    if (validateForm()) {
       setStep((prev) => Math.min(prev + 1, 6));
-    }
-  }, [validateForm]);
+  }, []);
 
   const prevStep = useCallback(() => {
     setStep((prev) => Math.max(prev - 1, 1));
@@ -85,12 +80,12 @@ function App() {
 
   const steps = useMemo(
     () => ({
-      1: <Step1 onDataChange={handleDataChange} formData={formData} />,
-      2: <Step2 onDataChange={handleDataChange} formData={formData} />,
-      3: <Step3 onDataChange={handleDataChange} formData={formData} />,
-      4: <Step4 onDataChange={handleDataChange} formData={formData} />,
-      5: <Step5 onDataChange={handleDataChange} formData={formData} />,
-      6: <Step6 onDataChange={handleDataChange} formData={formData} />,
+      1: <Step1 onDataChange={handleDataChange} formData={formData}/>,
+      2: <Step2 onDataChange={handleDataChange} formData={formData}/>,
+      3: <Step3 onDataChange={handleDataChange} formData={formData}/>,
+      4: <Step4 onDataChange={handleDataChange} formData={formData}/>,
+      5: <Step5 onDataChange={handleDataChange} formData={formData}/>,
+      6: <Step6 onDataChange={handleDataChange} formData={formData}/>,
     }),
     [formData]
   );
@@ -121,16 +116,16 @@ function App() {
               )}
               {step < 6 && (
                 <button
-                  onClick={nextStep}
-                  disabled={!isValid} // Vô hiệu hóa khi chưa nhập đủ thông tin
+                  onClick={nextStep} 
+                  disabled = {!validate}
                   className={`uppercase font-bold text-white px-4 py-2 rounded ${
-                    isValid ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
+                   validate ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
                   }`}
                 >
                   Tiếp theo
                 </button>
               )}
-              {step === 6 && isValid && (
+              {step === 6 &&(
                 <button
                   onClick={handleSubmit}
                   className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer"

@@ -1,17 +1,32 @@
 import { useEffect, useState } from "react";
 
-function Step2({ onDataChange, formData }) {
+function Step2({ onDataChange, formData, validate }) {
   const [localData, setLocalData] = useState({
     visitCount: formData.visitCount || "",
     visitTime: formData.visitTime || "",
     visitWith: formData.visitWith || "",
   });
-
   useEffect(() => {
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
   }, [localData, formData]);
+
+   const validateStep1 = () =>
+  {
+      //so sánh 6 cai bien do khac null gium t
+      if(formData.visitCount !== "" &&
+    formData.visitTime !== "" &&
+    formData.visitWith !== "")
+    {
+      //Bật nút lên
+      return !validate
+    }
+    else{
+      //Tắt nứt
+      return validate // Test
+    }
+  }
 
   return (
     <div className="space-y-4">
@@ -28,7 +43,7 @@ function Step2({ onDataChange, formData }) {
           value={localData.visitCount}
           onChange={(e) => setLocalData({ ...localData, visitCount: e.target.value })}
         >
-          <option value="">Chọn</option>
+          <option value="" >Chọn</option>
           <option value="Lần đầu">Lần đầu</option>
           <option value="2 - 5 lần">2–5 lần</option>
           <option value="Thường xuyên">Thường xuyên (1 lần/tuần hoặc hơn)</option>

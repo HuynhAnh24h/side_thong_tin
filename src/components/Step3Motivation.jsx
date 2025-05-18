@@ -14,7 +14,7 @@ function Step3({ onDataChange, formData,validate }) {
     }
 
      if(formData.reason == ""  ){
-      setErrorData("Bồ chọn 1 lý do")
+      setErrorData("Chọn 1 lý do")
     }else{
       setErrorData("")
     }

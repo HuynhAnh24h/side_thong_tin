@@ -18,7 +18,7 @@ function Step4({ onDataChange, formData, validate }) {
      if(formData.experienceRating == ""  ){
       setErrorData("Bồ chưa đánh giá")
     }else if(formData.recommendChanChan == ""  ){
-      setErrorData("Bồ chưa chọn giới thiện Chan Chan")
+      setErrorData("Bồ chưa chọn giới thiện ChanChan")
     }else{
       setErrorData("")
     }

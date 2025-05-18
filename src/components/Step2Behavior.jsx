@@ -17,7 +17,7 @@ function Step2({ onDataChange, formData, validate }) {
     if(formData.visitCount == ""  ){
       setErrorData("Bồ chưa chọn số lần đến")
     }else if(formData.visitTime == ""){
-      setErrorData("Bồ chưa chọn thời thời gian thường đến ChanChan")
+      setErrorData("Bồ chưa chọn thời gian thường đến ChanChan")
     }else if(formData.visitWith == ""){
       setErrorData("Bồ chưa chọn đi cùng ai")
     }else{

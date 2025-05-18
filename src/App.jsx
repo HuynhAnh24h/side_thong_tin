@@ -5,19 +5,20 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
 
 function App() {
-  const [step, setStep] = useState(1);
+ const [step, setStep] = useState(1);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState(() => JSON.parse(localStorage.getItem("formData")) || {});
   const [isValid, setIsValid] = useState(false);
-  const [isPhoneValid, setIsPhoneValid] = useState(true); // Thêm trạng thái kiểm tra số điện thoại
 
   const excludedFields = ["suggestedImprovement", "brandDifference"]; 
 
+  // Kiểm tra số điện thoại hợp lệ (định dạng Việt Nam)
   const validatePhone = (phone) => {
     const phoneRegex = /^(0[3|5|7|8|9])([0-9]{8})$/;
     return phoneRegex.test(phone);
   };
 
+  // Cập nhật dữ liệu vào localStorage mỗi khi formData thay đổi
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
@@ -33,8 +34,8 @@ function App() {
     const requiredFields = Object.keys(formData).filter(field => !excludedFields.includes(field));
     const isFormValid = requiredFields.every(field => formData[field]?.trim() && formData[field] !== "");
 
-    setIsPhoneValid(validatePhone(formData.phone)); // Kiểm tra số điện thoại riêng
-    setIsValid(isFormValid);
+    // Kiểm tra cả số điện thoại
+    setIsValid(isFormValid && validatePhone(formData.phone));
   }, [formData]);
 
   const handleDataChange = useCallback((newData) => {
@@ -43,16 +44,11 @@ function App() {
 
   const nextStep = useCallback(() => {
     if (!isValid) {
-      toast.error("Vui lòng điền đầy đủ thông tin trước khi tiếp tục!");
+      toast.error("Vui lòng nhập đúng số điện thoại và điền đầy đủ thông tin trước khi tiếp tục!");
       return;
     }
-
-    if (!isPhoneValid) {
-      toast.warning("Số điện thoại chưa hợp lệ, vui lòng kiểm tra lại.");
-    }
-
     setStep(prev => Math.min(prev + 1, 6));
-  }, [isValid, isPhoneValid]);
+  }, [isValid]);
 
   const prevStep = useCallback(() => {
     setStep(prev => Math.max(prev - 1, 1));

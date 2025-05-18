@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Step6({ onDataChange, formData }) {
-  const [selectedGift, setSelectedGift] = useState(formData.gift || "Nước thảo mộc sương sáo");
+  const [selectedGift, setSelectedGift] = useState(formData.gift || "");
 
   const handleInputChange = (e) => {
     const { value } = e.target;

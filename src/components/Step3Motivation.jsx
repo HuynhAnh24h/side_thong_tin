@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 
 function Step3({ onDataChange, formData }) {
-  const [localData, setLocalData] = useState({
-    reason: formData.reason || "", // Đặt giá trị mặc định là option đầu tiên
-  });
+  // Khởi tạo dữ liệu local từ formData
+  const [localData, setLocalData] = useState(() => ({
+    reason: formData.reason || "",
+  }));
 
+  // Đồng bộ dữ liệu từ formData khi bước thay đổi
   useEffect(() => {
-    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
-      onDataChange(localData);
-    }
-  }, [localData, formData]); // Loại bỏ `setLocalData` trong dependency
+    setLocalData((prev) => ({
+      ...prev,
+      ...formData, 
+    }));
+  }, [formData]);
 
-  // Xử lý thay đổi giá trị từ select
+  // Cập nhật dữ liệu ngay lập tức khi thay đổi
   const handleSelectChange = (e) => {
-    setLocalData({ reason: e.target.value });
+    const updatedData = { ...localData, reason: e.target.value };
+    setLocalData(updatedData);
+    onDataChange(updatedData); // Gửi dữ liệu lên component cha ngay lập tức
   };
 
   return (
@@ -28,7 +33,8 @@ function Step3({ onDataChange, formData }) {
           Lý do chính Bồ chọn ChanChan là gì?
         </label>
         <select
-          value={localData.reason}
+          name="reason"
+          value={localData.reason || ""}
           onChange={handleSelectChange}
           className="w-full p-2 border border-gray-300 rounded"
         >

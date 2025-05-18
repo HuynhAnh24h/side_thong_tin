@@ -1,17 +1,30 @@
 import { useEffect, useState } from "react";
 
 function Step4({ onDataChange, formData }) {
-  const [localData, setLocalData] = useState({
+  // Khởi tạo dữ liệu local từ formData
+  const [localData, setLocalData] = useState(() => ({
     brandDifference: formData.brandDifference || "",
-    experienceRating: formData.experienceRating || "", // Giá trị mặc định là option đầu tiên
-    recommendChanChan: formData.recommendChanChan || "", // Giá trị mặc định
-  });
+    experienceRating: formData.experienceRating || "",
+    recommendChanChan: formData.recommendChanChan || "",
+  }));
 
+  // Đồng bộ dữ liệu từ formData khi bước thay đổi
   useEffect(() => {
-    if (JSON.stringify(localData) !== JSON.stringify(formData)) {
-      onDataChange(localData);
-    }
-  }, [localData, formData]);
+    setLocalData((prev) => ({
+      ...prev,
+      ...formData, 
+    }));
+  }, [formData]);
+
+  // Cập nhật dữ liệu ngay lập tức khi thay đổi
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setLocalData((prev) => {
+      const updatedData = { ...prev, [name]: value };
+      onDataChange(updatedData); // Gửi dữ liệu lên component cha ngay lập tức
+      return updatedData;
+    });
+  };
 
   return (
     <div className="space-y-4">
@@ -25,11 +38,10 @@ function Step4({ onDataChange, formData }) {
         </label>
         <input
           type="text"
-          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.brandDifference}
-          onChange={(e) =>
-            setLocalData({ ...localData, brandDifference: e.target.value })
-          }
+          name="brandDifference"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white"
+          value={localData.brandDifference || ""}
+          onChange={handleInputChange}
         />
       </div>
 
@@ -38,11 +50,10 @@ function Step4({ onDataChange, formData }) {
           Trải nghiệm của Bồ hôm nay thế nào?
         </label>
         <select
-          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.experienceRating}
-          onChange={(e) =>
-            setLocalData({ ...localData, experienceRating: e.target.value })
-          }
+          name="experienceRating"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white"
+          value={localData.experienceRating || ""}
+          onChange={handleInputChange}
         >
           <option value="">Chọn</option>
           <option value="5 sao">★★★★★</option>
@@ -55,17 +66,16 @@ function Step4({ onDataChange, formData }) {
 
       <div>
         <label className="block text-md font-bold text-[#60230D] mb-3">
-         Bồ có sẵn sàng giới thiệu ChanChan cho người khác không?
+          Bồ có sẵn sàng giới thiệu ChanChan cho người khác không?
         </label>
         <select
-          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white outline-none text-[#60230D] text-sm font-bold"
-          value={localData.recommendChanChan}
-          onChange={(e) =>
-            setLocalData({ ...localData, recommendChanChan: e.target.value })
-          }
+          name="recommendChanChan"
+          className="w-full border-2 border-gray p-2 rounded focus:bg-[#FF6600] focus:border-[#FF6600] focus:text-white"
+          value={localData.recommendChanChan || ""}
+          onChange={handleInputChange}
         >
           <option value="">Chọn</option>
-          <option value="Rất sẵn lòng">Vâng, rất sẵn lòng</option>
+          <option value="Rất sẵn lòng">Vâng, rất sẵn lòng</option>
           <option value="Chưa chắc chắn">Tôi chưa chắc chắn</option>
           <option value="Không giới thiệu">Tôi sẽ không giới thiệu</option>
         </select>

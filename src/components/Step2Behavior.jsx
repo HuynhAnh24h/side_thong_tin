@@ -7,26 +7,15 @@ function Step2({ onDataChange, formData, validate }) {
     visitWith: formData.visitWith || "",
   });
   useEffect(() => {
+    if(formData.visitCount !== "" && formData.visitTime !== "" && formData.visitWith !== ""){
+      validate(true)
+    }else{
+      validate(false)
+    }
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }
   }, [localData, formData]);
-
-   const validateStep1 = () =>
-  {
-      //so sánh 6 cai bien do khac null gium t
-      if(formData.visitCount !== "" &&
-    formData.visitTime !== "" &&
-    formData.visitWith !== "")
-    {
-      //Bật nút lên
-      return !validate
-    }
-    else{
-      //Tắt nứt
-      return validate // Test
-    }
-  }
 
   return (
     <div className="space-y-4">

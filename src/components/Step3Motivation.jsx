@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
 
-function Step3({ onDataChange, formData }) {
+function Step3({ onDataChange, formData,validate }) {
   const [localData, setLocalData] = useState({
     reason: formData.reason || "", // Đặt giá trị mặc định là option đầu tiên
   });
 
   useEffect(() => {
+    if(formData.reason !== ""){
+      validate(true)
+    }else{
+      validate(false)
+    }
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }

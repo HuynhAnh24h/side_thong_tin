@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Step5({ onDataChange, formData }) {
+function Step5({ onDataChange, formData, validate }) {
   const [localData, setLocalData] = useState({
     preferredLocation: formData.preferredLocation || "",
     wantsDelivery: formData.wantsDelivery || "", // Đặt giá trị mặc định
@@ -9,6 +9,12 @@ function Step5({ onDataChange, formData }) {
   });
 
   useEffect(() => {
+    if(formData.preferredLocation !== "" && formData.wantsDelivery !=="" && formData.interestedInCombo !== "" &&formData.suggestedImprovement !== "")
+    {
+      validate(true)
+    }else{
+      validate(false)
+    }
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }

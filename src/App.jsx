@@ -9,61 +9,95 @@ function App() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
-  const [validate,setValidate] = useState(false)
-const handleDataChange = useCallback((newData) => {
-  setFormData((prev) => {
-    // Kiểm tra nếu có ít nhất một key thay đổi
-    const hasChanges = Object.keys(newData).some((key) => prev[key] !== newData[key]);
-    switch(step){
-      case 1:
-        if(formData.age !== ""&&
-            formData.job !== ""&&
-            formData.email !== ""&&
-            formData.cusname !== ""&&
-            formData.phone!== ""&&
-            formData.location !== ""&&
-            formData.lunchBudget !== ""){
-              setValidate(true)
-            }else{
-              setValidate(false)
-            }
-        break
-    }
-    if (!hasChanges) return prev; // Nếu không có thay đổi, giữ nguyên state
-    return { ...prev, ...newData };
-  });
+  const [validate, setValidate] = useState(false)
+  const handleDataChange = useCallback((newData) => {
+    setFormData((prev) => {
+      // Kiểm tra nếu có ít nhất một key thay đổi
+      const hasChanges = Object.keys(newData).some((key) => prev[key] !== newData[key]);
 
-}, []);
-console.log(handleDataChange)
+      if (!hasChanges) return prev; // Nếu không có thay đổi, giữ nguyên state
+      return { ...prev, ...newData };
+    });
+
+  }, []);
+
+
 
   // Trạng thái xác nhận form hợp lệ
   const nextStep = useCallback(() => {
-      setStep((prev) => Math.min(prev + 1, 6));
+    setStep((prev) => Math.min(prev + 1, 6));
   }, []);
 
   const prevStep = useCallback(() => {
+    switch (step) {
+      case 1:
+        const phoneNumber = String(formData.phone).split("")
+        const phoneLength = phoneNumber.length
+        const startWithZero = phoneNumber[0]
+        const typeNumber = Number(phoneNumber.join(""))
+        if (formData.age !== "" &&
+          formData.job !== "" &&
+          formData.email !== "" &&
+          formData.cusname !== "" &&
+          formData.location !== "" &&
+          formData.lunchBudget !== "" && phoneLength === 10 && startWithZero === "0" && typeNumber > 0) {
+          validate(true)
+        } else {
+          validate(false)
+        }
+        break
+      case 2:
+        if (formData.visitCount !== "" && formData.visitTime !== "" && formData.visitWith !== "") {
+          setValidate(true)
+        } else {
+          setValidate(false)
+        }
+
+        break
+      case 3:
+        if (formData.reason !== "") {
+          setValidate(true)
+        } else {
+          setValidate(false)
+        }
+        break
+      case 4:
+        if (formData.experienceRating !== "" && formData.recommendChanChan !== "") {
+          setValidate(true)
+        } else {
+          setValidate(false)
+        }
+        break
+      case 5:
+        if (formData.preferredLocation !== "" && formData.wantsDelivery !== "" && formData.interestedInCombo !== "" && formData.suggestedImprovement !== "") {
+          setValidate(true)
+        } else {
+          setValidate(false)
+        }
+        break
+      case 6:
+        if (formData.gift === "") {
+          setValidate(false)
+        } else {
+          setValidate(true)
+        }
+        break
+    }
     setStep((prev) => Math.max(prev - 1, 1));
   }, []);
-
+  
   const handleSubmit = async () => {
-    if (!validateForm()) return; // Kiểm tra trước khi gửi
-
-    // Xử lý trường trống trước khi gửi dữ liệu
-    const processedFormData = Object.keys(formData).reduce((acc, key) => {
-      acc[key] = formData[key] && formData[key].trim() !== "" ? formData[key] : "Không trả lời";
-      return acc;
-    }, {});
-
     setStep(1);
-    console.log(processedFormData); // Kiểm tra dữ liệu trước khi gửi
     toast.success("Gửi thành công!");
-    setFormData({});
     setIsSuccess(true);
+    setFormData({});
+
 
     try {
+      console.log(processedFormData)
       const response = await fetch("https://member.sayaka.vn/api/survey", {
         method: "POST",
-        body: JSON.stringify(processedFormData), // Gửi dữ liệu đã xử lý
+        body: JSON.stringify(formData), // Gửi dữ liệu đã xử lý
         headers: {
           "Content-Type": "application/json",
         },
@@ -80,12 +114,12 @@ console.log(handleDataChange)
 
   const steps = useMemo(
     () => ({
-      1: <Step1 onDataChange={handleDataChange} formData={formData}/>,
-      2: <Step2 onDataChange={handleDataChange} formData={formData}/>,
-      3: <Step3 onDataChange={handleDataChange} formData={formData}/>,
-      4: <Step4 onDataChange={handleDataChange} formData={formData}/>,
-      5: <Step5 onDataChange={handleDataChange} formData={formData}/>,
-      6: <Step6 onDataChange={handleDataChange} formData={formData}/>,
+      1: <Step1 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
+      2: <Step2 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
+      3: <Step3 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
+      4: <Step4 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
+      5: <Step5 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
+      6: <Step6 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
     }),
     [formData]
   );
@@ -116,20 +150,20 @@ console.log(handleDataChange)
               )}
               {step < 6 && (
                 <button
-                  onClick={nextStep} 
-                  disabled = {!validate}
-                  className={`uppercase font-bold text-white px-4 py-2 rounded ${
-                   validate ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
-                  }`}
+                  onClick={nextStep}
+                  disabled={!validate}
+                  className={`uppercase font-bold text-white px-4 py-2 rounded ${validate ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
+                    }`}
                 >
                   Tiếp theo
                 </button>
               )}
-              {step === 6 &&(
+              {step === 6 && (
                 <button
                   onClick={handleSubmit}
-                  className="bg-[#584e33fb] uppercase font-bold text-white px-4 py-2 rounded hover:bg-[#FF6600] hover:text-white cursor-pointer"
-                >
+                  disabled={!validate}
+                  className={`uppercase font-bold text-white px-4 py-2 rounded ${validate ? "bg-[#584e33fb] hover:bg-[#FF6600] cursor-pointer" : "bg-gray-400 cursor-not-allowed"
+                    }`}                >
                   Gửi
                 </button>
               )}

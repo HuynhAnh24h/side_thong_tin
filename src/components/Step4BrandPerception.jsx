@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Step4({ onDataChange, formData }) {
+function Step4({ onDataChange, formData, validate }) {
   const [localData, setLocalData] = useState({
     brandDifference: formData.brandDifference || "",
     experienceRating: formData.experienceRating || "", // Giá trị mặc định là option đầu tiên
@@ -8,6 +8,11 @@ function Step4({ onDataChange, formData }) {
   });
 
   useEffect(() => {
+    if(formData.experienceRating !== "" && formData.recommendChanChan !== ""){
+      validate(true)
+    }else{
+      validate(false)
+    }
     if (JSON.stringify(localData) !== JSON.stringify(formData)) {
       onDataChange(localData);
     }

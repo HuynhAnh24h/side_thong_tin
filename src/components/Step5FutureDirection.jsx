@@ -33,7 +33,8 @@ function Step5({ onDataChange, formData, validate }) {
   }, [localData, formData]);
 
   return (
-    <div className="space-y-4">
+    <>
+      <div className="space-y-4">
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-white">
         Future Direction
       </h2>
@@ -116,6 +117,7 @@ function Step5({ onDataChange, formData, validate }) {
       </div>
       <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
+    </>
   );
 }
 

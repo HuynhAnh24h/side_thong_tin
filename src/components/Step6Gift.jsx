@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-function Step6({ onDataChange, formData,validate }) {
+function Step6({ onDataChange, formData,validate, countTracking }) {
+  countTracking = '7'
   const [errorData, setErrorData] = useState("")
     const [localData, setLocalData] = useState({
     gift: formData.gift || "",
@@ -25,7 +26,8 @@ function Step6({ onDataChange, formData,validate }) {
   }, [localData, formData]);
 
   return (
-    <div className="space-y-4">
+    <>
+      <div className="space-y-4">
       <h1 className="text-[#60230D] font-bold text-[20px] text-center">
         Cảm ơn Bồ đã tham gia khảo sát
       </h1>
@@ -50,6 +52,7 @@ function Step6({ onDataChange, formData,validate }) {
       </div>
       <span className="text-bold text-sm text-red-800">{errorData}</span>
       </div>
+    </>
   );
 }
 

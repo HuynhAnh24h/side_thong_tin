@@ -1,15 +1,20 @@
 import { Step1, Step2, Step3, Step4, Step5, Step6, Success } from "./components";
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo} from "react";
 import logo from "./assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import CSS
+import Tracking from "./components/Tracking";
 
 
 function App() {
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    userId: localStorage.getItem("tracking_user_id") || ""
+  });
   const [isSuccess, setIsSuccess] = useState(false);
   const [validate, setValidate] = useState(false)
+  const [stepAction, setStepAction] = useState("init");
+  const [countTracking, setCount] = useState(1);
   const handleDataChange = useCallback((newData) => {
     setFormData((prev) => {
       // Kiểm tra nếu có ít nhất một key thay đổi
@@ -26,6 +31,8 @@ function App() {
   // Trạng thái xác nhận form hợp lệ
   const nextStep = useCallback(() => {
     setStep((prev) => Math.min(prev + 1, 6));
+    setCount(prev => prev + 1);
+    setStepAction("next");
   }, []);
 
   const prevStep = useCallback(() => {
@@ -36,11 +43,11 @@ function App() {
         const startWithZero = phoneNumber[0]
         const typeNumber = Number(phoneNumber.join(""))
         if (formData.age !== "" &&
-          formData.job !== "" &&
-          formData.email !== "" &&
-          formData.cusname !== "" &&
-          formData.location !== "" &&
-          formData.lunchBudget !== "" && phoneLength === 10 && startWithZero === "0" && typeNumber > 0) {
+            formData.job !== "" &&
+            formData.email !== "" &&
+            formData.cusname !== "" &&
+            formData.location !== "" &&
+            formData.lunchBudget !== "" && phoneLength === 10 && startWithZero === "0" && typeNumber > 0) {
           setValidate(true)
         } else {
           setValidate(false)
@@ -85,10 +92,10 @@ function App() {
       
     }
     setStep((prev) => Math.max(prev - 1, 1));
+    setStepAction("back");
   }, []);
 
   const handleSubmit = async () => {
-    console.log(formData)
     setStep(1);
     toast.success("Gửi thành công!");
     setIsSuccess(true);
@@ -107,7 +114,7 @@ function App() {
           "Content-Type": "application/json",
         },
       });
-
+      setStepAction("submit");
       if (!response.ok) {
         const errorText = await response.text();
         console.log(errorText)
@@ -116,7 +123,7 @@ function App() {
       console.error("Lỗi khi gửi yêu cầu:", error);
     }
   };
-
+  
   const steps = useMemo(
     () => ({
       1: <Step1 onDataChange={handleDataChange} formData={formData} validate={setValidate} />,
@@ -130,6 +137,8 @@ function App() {
   );
 
   return (
+    <>
+    <Tracking count={countTracking} step={step} formData={formData}/>
     <div className="mx-auto h-auto flex flex-col justify-center items-center bg-amber-50]">
       <div className="max-w-md bg-white rounded-md shadow-sm p-10 flex flex-col items-center justify-start">
         <div className="flex justify-center items-center mb-5">
@@ -139,7 +148,7 @@ function App() {
         </div>
         {isSuccess ? (
           <div>
-            <Success />
+            <Success/>
           </div>
         ) : (
           <div>
@@ -178,6 +187,7 @@ function App() {
       </div>
       <ToastContainer position="top-center" autoClose={3000} />
     </div>
+    </>
   );
 }
 

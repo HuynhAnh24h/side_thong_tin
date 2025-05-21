@@ -68,6 +68,7 @@ function Step1({ onDataChange, formData, validate }) {
 
  
   return (
+   <>
     <div className="space-y-4">
       <h2 className="text-lg font-bold border-2 border-[#FF6600] p-5 rounded-md bg-[#FF6600] text-center text-while">
         Basic Profile
@@ -180,6 +181,7 @@ function Step1({ onDataChange, formData, validate }) {
 
       <span className="text-bold text-sm text-red-800">{errorData}</span>
     </div>
+   </>
   );
 }
 

@@ -44,10 +44,8 @@ function Step6({ onDataChange, formData,validate, countTracking }) {
           onChange={(e) => setLocalData({ ...localData, gift: e.target.value })}
         >
           <option value="" >Chọn</option>
-          <option value="Nước thảo mộc sương sáo">Nước thảo mộc sương sáo</option>
-          <option value="Nước chanh dây xí muội">Nước chanh dây xí muội</option>
+          <option value="Nước tía tô hạt chia">Nước tía tô hạt chia</option>
           <option value="Trà hoa cúc nha đam">Trà hoa cúc nha đam</option>
-          <option value="Bánh pudding">Bánh pudding</option>
         </select>
       </div>
       <span className="text-bold text-sm text-red-800">{errorData}</span>

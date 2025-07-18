@@ -1,0 +1,900 @@
+[
+  {
+    "numberOrder": 1,
+    "categoryName": "CHO CHANCHAN 1 XÍU THÔNG TIN VỀ BẠN NHA~~",
+    "questions": [
+      {
+        "id": 0,
+        "title": "1. Bạn thuộc nhóm độ tuổi nào?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Dưới 25"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "25–32"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "32–39"
+          },
+          {
+            "numberOrder": 4,
+            "answer": "39-46"
+          },
+          {
+            "numberOrder": 5,
+            "answer": "46+"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "2. Trạng thái hôn nhân của bạn:",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Độc thân"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Đã có gia đình"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "3. Nghề nghiệp hiện tại của bạn là? ",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Sinh viên"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Nhân viên văn phòng"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Kinh doanh cá nhân"
+          },
+	  {
+            "numberOrder": 3,
+            "answer": "Nội trợ"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "4. Vị trí công việc của bạn?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Thực tập sinh"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Nhân viên"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Cấp quản lý/ Trưởng phòng"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "5. Bạn đang sinh sống tại đâu?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "TP.HCM"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Hà Nội"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Đà Nẵng"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "6. Bạn biết đến ChanChan Noodle qua kênh nào?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Facebook / Instagram"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Tiktok"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Người quen giới thiệu"
+          },
+          {
+            "numberOrder": 4,
+            "answer": "Ứng dụng giao hàng (ShopeeFood, GrabFood, Be, etc.)"
+          },
+          {
+            "numberOrder": 5,
+            "answer": "Đi ngang thấy / tình cờ biết"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 2,
+    "categoryName": "THÓI QUEN ĂN UỐNG - Để ChanChan hiểu bạn nhiều hơn một chút",
+    "questions": [
+      {
+        "id": 7,
+        "title": "7. Bạn thường ăn món hủ tiếu theo kiểu nào?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Khô"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Nước"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "8. Bạn thường đặt món ăn bằng cách nào?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Ứng dụng giao hàng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Đặt trực tiếp qua Fanpage"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Gọi điện Hotline"
+          },
+          {
+            "numberOrder": 4,
+            "answer": "Đến mua mang đi"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "9. Bạn thích món ăn có những hương vị như thế nào?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Chua cay"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Creamy (vị béo nhẹ)"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Ngọt thanh"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "10. Bạn ăn ở nhà hàng chay/thuần chay với tần suất như thế nào?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Hằng ngày"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Vài lần mỗi tuần"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Chỉ theo lịch ăn chay"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "1 lần mỗi tuần"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Thỉnh thoảng"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Đây là lần đầu tiên"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "11. Khi ăn trưa, bạn dành bao nhiêu thời gian vậy nè?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Dưới 30 phút"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Từ 30 phút đến 1 tiếng"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "12. Mức giá hợp lý cho một phần ăn để bạn order ở ngoài là:",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Dưới 40.000đ"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "40.000–60.000đ"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "60.000–80.000đ"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Trên 80.000đ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 3,
+    "categoryName": "SỞ THÍCH & LỐI SỐNG - Để ChanChan phục vụ bạn tốt hơn nữa",
+    "questions": [
+      {
+        "id": 13,
+        "title": "13. Sở thích sau khi làm việc của bạn là gì:",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Đi tập thể thao"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Đi ăn cùng với bạn bè, gia đình"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Nghỉ ngơi ở nhà"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "14. Khi sử dụng mạng xã hội, bạn quan tâm đến những chủ đề nào:",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Đồ ăn - Nhà hàng - Quán cafe"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Showbiz"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Tin tức chính trị"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Làm đẹp và Sức khoẻ"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "15.  Một ngày bạn dành bao nhiêu thời gian để sử dụng mạng xã hội?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Dưới 1 tiếng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "1 tiếng - 2 tiếng"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "2 tiếng - 3 tiếng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 4,
+    "categoryName": "CẢM NHẬN CỦA BẠN VỀ CHANCHAN",
+    "questions": [
+      {
+        "id": 16,
+        "title": "16. Điều gì khiến bạn chọn ChanChan (hoặc một quán ăn) để ăn/lặp lại order?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Ngon miệng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Giá hợp lý"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Giao hàng nhanh"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Đóng gói đẹp"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Thái độ phục vụ tốt"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Menu đa dạng"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Hợp “vibe” của mình"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "17. Khi đến ChanChan, bạn quan tâm yếu tố nào nhất ngoại trừ hương vị món ăn nè?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Thái độ phục vụ"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Sự trình bày món ăn"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Vệ sinh an toàn thực phẩm"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Có khuyến mãi"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "18. Món nào của ChanChan bạn thích nhất? Vì sao?",
+        "typeOfQuestion": 3,
+        "answers": null
+      },
+      {
+        "id": 20,
+        "title": "19. Bạn muốn ChanChan bổ sung món gì vào menu?",
+        "typeOfQuestion": 3,
+        "answers": null
+      },
+      {
+        "id": 21,
+        "title": "20. Bạn có sẵn lòng giới thiệu ChanChan cho bạn bè không?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất sẵn lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Có thể"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 5,
+    "categoryName": "BẠN CẢM THẤY THẾ NÀO VỀ TỪNG YẾU TỐ SAU ĐÂY TẠI CHANCHAN?",
+    "questions": [
+      {
+        "id": 28,
+        "title": "1. Sản phẩm",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "title": "2. Độ sạch sẽ của nhà hàng",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "title": "3. Dịch vụ",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 6,
+    "categoryName": "BẠN CẢM THẤY THẾ NÀO VỀ BỮA ĂN CỦA NGÀY HÔM NAY?",
+    "questions": [
+      {
+        "id": 31,
+        "title": "1. Món khai vị",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "title": "2. Món nước",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "title": "3. Món khô",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "title": "4. Món tráng miệng",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "title": "5. Các món nước nhà làm",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 7,
+    "categoryName": "BẠN CẢM THẤY THẾ NÀO VỀ TỪNG YẾU TỐ SAU ĐÂY TẠI CHANCHAN?",
+    "questions": [
+      {
+        "id": 36,
+        "title": "1. Cách trang trí",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "title": "2. Khẩu phần",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "title": "3. Mùi vị",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "title": "4. Nhiệt độ món ăn",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "title": "5. Hương thơm",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 8,
+    "categoryName": "BẠN CẢM THẤY THẾ NÀO VỀ TỪNG YẾU TỐ SAU ĐÂY TẠI CHANCHAN?",
+    "questions": [
+      {
+        "id": 41,
+        "title": "1. Thái độ phục vụ của nhân viên",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "title": "2. Tốc độ Order tại quầy của thu ngân",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "title": "3. Tốc độ lên món",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "title": "4. Tốc độ phản hồi của nhân viên",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "title": "5. Bàn ghế (sự sạch sẽ và thoải mái)",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "title": "6. Nhà vệ sinh",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "title": "7. Sàn nhà (sạch sẽ, an toàn)",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "title": "8. Thực đơn (rõ ràng, dễ hiểu)",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "numberOrder": 9,
+    "categoryName": "CHANCHAN CÁM ƠN BẠN RẤT NHIỀU 🧡",
+    "text" : "ChanChan thỉnh thoảng sẽ gửi tặng quà cho khách hàng may mắn hoặc thân thiết nhất. Nếu bạn muốn nhận quà bất ngờ từ tụi mình, để lại thông tin nha 😍",
+    "questions": [
+      {
+        "id": -1,
+        "title": "Tên:",
+        "typeOfQuestion": 3,
+        "answers": null
+      },
+      {
+        "id": 1,
+        "title": "Số điện thoại/Zalo:",
+        "typeOfQuestion": 3,
+        "answers": null
+      }
+    ]
+  },
+  {
+    "numberOrder": 10,
+    "categoryName": "CẢM ƠN BẠN ĐÃ THAM GIA KHẢO SÁT",
+    "text": "Mọi góp ý của Bạn là động lực để ChanChan tiếp tục phát triển",
+    "questions": [
+      {
+        "id": 49,
+        "title": "ChanChan cảm ơn Bạn bằng món quà nhỏ. Mời Bạn chọn quà nhé",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Nước tía tô hạt chia"
+          },
+          {
+            "numberOrder": 4,
+            "answer": "Nước chanh dây xí muội"
+          },
+          {
+            "numberOrder": 5,
+            "answer": "Bánh Pudding"
+          }
+        ]
+      }
+    ]
+  }
+]

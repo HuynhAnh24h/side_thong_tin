@@ -13,10 +13,12 @@ export function useSurveySchema() {
           if (q.type === "phone") {
             return [
               key,
-              z.string().regex(/^(0|\+84)\d{9}$/, {
-                message: `Số điện thoại không hợp lệ. Vui lòng nhập đúng số điện thoại/Zalo.`,
-              }),
-            ]
+              z.string().regex(
+                /^(0|\+84)(3[2-9]|5[6|8|9]|7[0|6-9]|8[1-6|8|9]|9[0-9])\d{7}$/,
+                {
+                  message: "Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại/Zalo đúng định dạng.",
+                }
+              )]
           }
 
           if (q.typeOfQuestion === 1) {

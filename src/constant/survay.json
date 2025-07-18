@@ -867,6 +867,7 @@
         "id": 1,
         "title": "Số điện thoại/Zalo:",
         "typeOfQuestion": 3,
+        "type":"phone",
         "answers": null
       }
     ]

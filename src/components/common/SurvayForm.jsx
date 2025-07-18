@@ -10,7 +10,7 @@ import { toast } from "react-toastify"
 import logo from "@/assets/logo.png"
 import ThanhYou from "./ThanhYou"
 import { useSurveySchema } from "@/hooks/useSurveySchema"
-// ✅ Tạo schema validation bằng zod
+import axios from "axios"
 const schema = useSurveySchema()
 
 
@@ -46,18 +46,27 @@ function SurveyForm() {
         }
     }, [answers, isSubmitted])
 
-    const onSubmit = (data) => {
-        setIsSubmitted(true)
+    const onSubmit = async(data) => {
+       try{
+         setIsSubmitted(true)
         const formatted = Object.entries(data).map(([id, answer]) => ({
-            questionId: id,
+            questionId: parseInt(id, 10),
             answer,
         }))
-        console.log("Dữ liệu gửi lên server:", formatted)
-        toast.success("Đã gửi khảo sát thành công!")
+        const response = await axios.post("https://member.sayaka.vn/api/survey",formatted)
+        if(response){
+            console.log(response)
+            toast.success("Đã gửi khảo sát thành công!")
 
-        localStorage.removeItem("surveyAnswers") // ✅ Xóa đúng key cần thiết
-        reset({})
-        setThank(true)
+            localStorage.removeItem("surveyAnswers")
+            reset({})
+            setThank(true)
+        }else{
+            console.log("Gửi lỗi rồi ní")
+        }
+       }catch(error){
+        console.log(error)
+       }
     }
 
     const handleNextStep = async () => {

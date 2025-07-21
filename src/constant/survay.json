@@ -4,7 +4,7 @@
     "categoryName": "CHO CHANCHAN 1 XÍU THÔNG TIN VỀ BẠN NHA~~",
     "questions": [
       {
-        "id": 0,
+        "id": -1,
         "title": "1. Bạn thuộc nhóm độ tuổi nào?",
         "typeOfQuestion": 1,
         "answers": [
@@ -31,7 +31,7 @@
         ]
       },
       {
-        "id": 2,
+        "id": 1,
         "title": "2. Trạng thái hôn nhân của bạn:",
         "typeOfQuestion": 1,
         "answers": [
@@ -42,6 +42,29 @@
           {
             "numberOrder": 2,
             "answer": "Đã có gia đình"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "3. Bạn đã đến ChanChan được mấy lần?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Lần đầu"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Lần 2"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Lần 3"
+          },
+	  {
+            "numberOrder": 3,
+            "answer": "Thường xuyên"
           }
         ]
       },
@@ -858,16 +881,16 @@
     "text" : "ChanChan thỉnh thoảng sẽ gửi tặng quà cho khách hàng may mắn hoặc thân thiết nhất. Nếu bạn muốn nhận quà bất ngờ từ tụi mình, để lại thông tin nha 😍",
     "questions": [
       {
-        "id": -1,
+        "id": -2,
         "title": "Tên:",
         "typeOfQuestion": 3,
         "answers": null
       },
       {
-        "id": 1,
+        "id": 0,
         "title": "Số điện thoại/Zalo:",
         "typeOfQuestion": 3,
-        "type":"phone",
+        "type": "phone",
         "answers": null
       }
     ]

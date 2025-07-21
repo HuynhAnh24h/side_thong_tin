@@ -11,12 +11,14 @@ import logo from "@/assets/logo.png"
 import ThanhYou from "./ThanhYou"
 import { useSurveySchema } from "@/hooks/useSurveySchema"
 import axios from "axios"
+import { FaSpinner } from "react-icons/fa";
 const schema = useSurveySchema()
 
 
 function SurveyForm() {
     const [step, setStep] = useState(0)
     const [thank, setThank] = useState(false)
+    const [loading, setLoading] = useState(false)
     const currentStep = survay[step]
     const allKeys = survay.flatMap(step => step.questions.map(q => q.id.toString()))
     const saved = localStorage.getItem("surveyAnswers")
@@ -46,27 +48,29 @@ function SurveyForm() {
         }
     }, [answers, isSubmitted])
 
-    const onSubmit = async(data) => {
-       try{
-         setIsSubmitted(true)
-        const formatted = Object.entries(data).map(([id, answer]) => ({
-            questionId: parseInt(id, 10),
-            answer,
-        }))
-        const response = await axios.post("https://member.sayaka.vn/api/survey",formatted)
-        if(response){
-            console.log(response)
-            toast.success("Đã gửi khảo sát thành công!")
+    const onSubmit = async (data) => {
+        try {
+            setIsSubmitted(true)
+            setLoading(true)
+            const formatted = Object.entries(data).map(([id, answer]) => ({
+                questionId: parseInt(id, 10),
+                answer,
+            }))
+            const response = await axios.post("https://member.sayaka.vn/api/survey", formatted)
+            if (response) {
+                console.log(response)
+                toast.success("Đã gửi khảo sát thành công!")
 
-            localStorage.removeItem("surveyAnswers")
-            reset({})
-            setThank(true)
-        }else{
-            console.log("Gửi lỗi rồi ní")
+                localStorage.removeItem("surveyAnswers")
+                reset({})
+                setThank(true)
+                setLoading(false)
+            } else {
+                console.log("Gửi lỗi rồi ní")
+            }
+        } catch (error) {
+            console.log(error)
         }
-       }catch(error){
-        console.log(error)
-       }
     }
 
     const handleNextStep = async () => {
@@ -146,15 +150,29 @@ function SurveyForm() {
                                         Quay lại
                                     </Button>
                                 )}
-                                {step < survay.length - 1 ? (
-                                    <Button type="button" onClick={handleNextStep} className="bg-orange-500 hover:bg-orange-600 text-white">
-                                        Tiếp theo
-                                    </Button>
-                                ) : (
-                                    <Button type="submit" className="bg-green-500 hover:bg-green-600 text-white">
-                                        Gửi khảo sát
-                                    </Button>
-                                )}
+                                {
+                                    step < survay.length - 1 ? (
+                                        <Button
+                                            type="button"
+                                            onClick={handleNextStep}
+                                            className="bg-orange-500 hover:bg-orange-600 text-white"
+                                        >
+                                            Tiếp theo
+                                        </Button>
+                                    ) : loading ? (
+                                        <Button className="bg-green-500 hover:bg-green-600 text-white" disabled>
+                                            <FaSpinner className="mr-2 animate-spin" />
+                                            Đang gửi khảo sát...
+                                        </Button>
+                                    ) : (
+                                        <Button
+                                            type="submit"
+                                            className="bg-green-500 hover:bg-green-600 text-white"
+                                        >
+                                            Gửi khảo sát
+                                        </Button>
+                                    )
+                                }
                             </div>
                         </form>
                     </div>

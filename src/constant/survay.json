@@ -872,6 +872,63 @@
             "answer": "Không hài lòng"
           }
         ]
+      },
+      {
+        "id": 49,
+        "title": "9. Bạn cảm thấy nhạc nhà hàng có hay không?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "title": "10. Bạn cảm nhận nhạc mở như vậy có to quá không?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "title": "11. Không gian xung quanh có làm bạn cảm thấy thoải mái không?",
+        "typeOfQuestion": 1,
+        "answers": [
+          {
+            "numberOrder": 1,
+            "answer": "Rất hài lòng"
+          },
+          {
+            "numberOrder": 2,
+            "answer": "Bình thường"
+          },
+          {
+            "numberOrder": 3,
+            "answer": "Không hài lòng"
+          }
+        ]
       }
     ]
   },
@@ -901,7 +958,7 @@
     "text": "Mọi góp ý của Bạn là động lực để ChanChan tiếp tục phát triển",
     "questions": [
       {
-        "id": 49,
+        "id": 52,
         "title": "ChanChan cảm ơn Bạn bằng món quà nhỏ. Mời Bạn chọn quà nhé",
         "typeOfQuestion": 1,
         "answers": [

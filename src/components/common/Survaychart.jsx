@@ -141,15 +141,15 @@ const Survaychart = ({ data }) => {
                             <ul className="space-y-2">
                                 {legendItems.map((item, index) => (
                                     <li key={index} className="flex items-center justify-between min-w-[200px]">
-                                        <div className="flex items-center gap-2">
+                                        <div className="flex items-center gap-5">
                                             <div
                                                 className="w-4 h-4 rounded-full"
                                                 style={{ backgroundColor: item.color }}
                                             ></div>
-                                            <span className="text-gray-700 font-medium">{item.label}</span>
+                                            <span className="text-gray-700 font-medium mr-3">{item.label}</span>
                                         </div>
                                         <span className="text-gray-900 font-semibold">
-                                            {item.value} ({item.percentage}%)
+                                            <span className="space-x-4">{item.value}</span> ({item.percentage}%)
                                         </span>
                                     </li>
                                 ))}

@@ -95,7 +95,7 @@ const Survaychart = ({ data }) => {
     return (
         <div className="flex h-screen bg-gray-50 overflow-hidden">
             {/* Sidebar - Left */}
-            <aside className="w-[450px] h-full bg-white p-4 flex flex-col justify-center">
+            <aside className="w-[300px] h-full bg-white p-4 flex flex-col justify-center">
                 <header className="bg-white flex justify-center items-center rounded-md">
                     <div className="w-[150px] h-[150px]">
                         <img src={logo} alt="Logo ChanChan" className="w-full h-full mb-4" />
@@ -128,12 +128,12 @@ const Survaychart = ({ data }) => {
                     <CardHeader>
                         <CardTitle className="text-lg font-semibold text-orange-500 flex items-center gap-2">
                             <MdPieChart />
-                            Thống kê: {selectedItem.question}
+                            {selectedItem.question}
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="h-full flex flex-row items-center justify-center gap-10">
                         {/* Pie Chart */}
-                        <div className="h-[500px] w-[500px]">
+                        <div className="h-[350px] w-[350px]">
                             <Pie data={pieData} options={pieOptions} />
                         </div>
 

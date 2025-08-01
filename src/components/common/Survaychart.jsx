@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     Card,
     CardHeader,
@@ -94,13 +95,14 @@ const Survaychart = ({ data }) => {
     return (
         <div className="flex h-screen bg-gray-50 overflow-hidden">
             {/* Sidebar - Left */}
-            <aside className="w-[260px] h-full bg-white p-4 flex flex-col justify-center">
+            <aside className="w-[450px] h-full bg-white p-4 flex flex-col justify-center">
                 <header className="bg-white flex justify-center items-center rounded-md">
                     <div className="w-[150px] h-[150px]">
                         <img src={logo} alt="Logo ChanChan" className="w-full h-full mb-4" />
                     </div>
                 </header>
-                <ScrollArea className="h-[90%] bg-white border rounded-xl shadow-md p-4">
+                <Link to="/over-view" className="w-full text-left px-4 py-2 rounded-md transition-colors hover:bg-orange-100 text-orange-500 font-semibold">Tổng quan</Link>
+                <ScrollArea className="h-[50%] bg-white border rounded-xl shadow-md p-4">
                     <nav className="space-y-2">
                         {data.map((item, index) => (
                             <Button

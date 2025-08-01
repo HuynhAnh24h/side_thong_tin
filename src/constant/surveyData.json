@@ -1,6 +1,6 @@
 [
   {
-    "question": "Tuổi",
+    "question": "Bạn thuộc nhóm độ tuổi nào?",
     "answers": {
       "25–32": 115,
       "Dưới 25": 123,
@@ -10,14 +10,14 @@
     }
   },
   {
-    "question": "Hôn nhân",
+    "question": "Trạng thái hôn nhân của bạn",
     "answers": {
       "Đã có gia đình": 147,
       "Độc thân": 230
     }
   },
   {
-    "question": "Số lần ghé",
+    "question": "Bạn đã đến ChanChan được mấy lần?",
     "answers": {
       "Lần đầu": 177,
       "Lần 2": 39,
@@ -26,7 +26,7 @@
     }
   },
   {
-    "question": "Nghề nghiệp",
+    "question": "NNghề nghiệp hiện tại của bạn là?",
     "answers": {
       "Kinh doanh cá nhân": 92,
       "Sinh viên": 72,
@@ -35,7 +35,7 @@
     }
   },
   {
-    "question": "Vị trí CViec",
+    "question": "Vị trí công việc của bạn?",
     "answers": {
       "Cấp quản lý/ Trưởng phòng": 135,
       "Nhân viên": 175,
@@ -43,7 +43,7 @@
     }
   },
   {
-    "question": "Địa chỉ",
+    "question": "Bạn đang sinh sống tại đâu?",
     "answers": {
       "TP.HCM": 321,
       "Hà Nội": 41,
@@ -51,7 +51,7 @@
     }
   },
   {
-    "question": "Kênh",
+    "question": "Bạn biết đến ChanChan Noodle qua kênh nào?",
     "answers": {
       "Facebook / Instagram": 141,
       "Người quen giới thiệu": 116,
@@ -61,14 +61,14 @@
     }
   },
   {
-    "question": "Món",
+    "question": "Bạn thường ăn món hủ tiếu theo kiểu nào?",
     "answers": {
       "Khô": 229,
       "Nước": 148
     }
   },
   {
-    "question": "Đặt hàng",
+    "question": "Bạn thường đặt món ăn bằng cách nào?",
     "answers": {
       "Ứng dụng giao hàng": 225,
       "Đến mua mang đi": 106,
@@ -77,7 +77,7 @@
     }
   },
   {
-    "question": "Hương vị",
+    "question": "Bạn thích món ăn có những hương vị như thế nào?",
     "answers": {
       "Chua cay": 182,
       "Creamy (vị béo nhẹ)": 67,
@@ -85,7 +85,7 @@
     }
   },
   {
-    "question": "Tần suất",
+    "question": "Bạn ăn chay/thuần chay với tần suất như thế nào?",
     "answers": {
       "Thỉnh thoảng": 179,
       "Đây là lần đầu tiên": 17,
@@ -96,14 +96,14 @@
     }
   },
   {
-    "question": "Thời gian",
+    "question": "Khi ăn trưa, bạn dành bao nhiêu thời gian",
     "answers": {
       "Từ 30 phút đến 1 tiếng": 264,
       "Dưới 30 phút": 113
     }
   },
   {
-    "question": "Mức giá",
+    "question": "mức giá hợp lý cho một phần ăn",
     "answers": {
       "60.000–80.000đ": 126,
       "40.000–60.000đ": 197,
@@ -112,7 +112,7 @@
     }
   },
   {
-    "question": "Sở thích",
+    "question": "Sở thích sau khi làm việc của bạn",
     "answers": {
       "Nghỉ ngơi ở nhà": 118,
       "Đi ăn cùng với bạn bè, gia đình": 184,
@@ -120,7 +120,7 @@
     }
   },
   {
-    "question": "Chủ đề MXH",
+    "question": "Chủ đề quan tâm trên MXH",
     "answers": {
       "Làm đẹp và Sức khoẻ": 98,
       "Đồ ăn - Nhà hàng - Quán cafe": 214,
@@ -129,7 +129,7 @@
     }
   },
   {
-    "question": "Thời gian MXH",
+    "question": "Thời gian để sử dụng mạng xã hội?",
     "answers": {
       "1 tiếng - 2 tiếng": 179,
       "2 tiếng - 3 tiếng": 158,
@@ -137,7 +137,7 @@
     }
   },
   {
-    "question": "Lý do chọn",
+    "question": "Điều gì khiến bạn chọn ChanChan",
     "answers": {
       "Ngon miệng": 242,
       "Hợp “vibe” của mình": 50,
@@ -149,7 +149,7 @@
     }
   },
   {
-    "question": "Yếu tố chọn",
+    "question": "Yếu tố quan tâm",
     "answers": {
       "Vệ sinh an toàn thực phẩm": 138,
       "Thái độ phục vụ": 153,
@@ -158,7 +158,7 @@
     }
   },
   {
-    "question": "Giới thiệu",
+    "question": "Bạn có sẵn lòng giới thiệu ChanChan",
     "answers": {
       "Rất sẵn lòng": 286,
       "Có thể": 86,
@@ -169,14 +169,16 @@
     "question": "Sản phẩm",
     "answers": {
       "Rất hài lòng": 299,
-      "Bình thường": 78
+      "Bình thường": 78,
+      "Không hài lòng": 0
     }
   },
   {
-    "question": "Độ sạch sẽ",
+    "question": "Độ sạch sẽ của nhà hàng",
     "answers": {
       "Rất hài lòng": 327,
-      "Bình thường": 50
+      "Bình thường": 50,
+      "Không hài lòng": 0
     }
   },
   {
@@ -191,7 +193,8 @@
     "question": "Món khai vị",
     "answers": {
       "Rất hài lòng": 259,
-      "Bình thường": 118
+      "Bình thường": 118,
+      "Không hài lòng": 0
     }
   },
   {
@@ -211,18 +214,18 @@
     }
   },
   {
-    "question": "Tráng miệng",
+    "question": "Món tráng miệng",
     "answers": {
-      "Bình thường": 134,
       "Rất hài lòng": 242,
+      "Bình thường": 134,
       "Không hài lòng": 1
     }
   },
   {
-    "question": "Nước nhà làm",
+    "question": "Các món nước nhà làm",
     "answers": {
-      "Bình thường": 128,
       "Rất hài lòng": 248,
+      "Bình thường": 128,
       "Không hài lòng": 1
     }
   },
@@ -251,7 +254,7 @@
     }
   },
   {
-    "question": "Nhiệt độ MĂn",
+    "question": "Nhiệt độ món ăn",
     "answers": {
       "Rất hài lòng": 256,
       "Bình thường": 119,
@@ -267,14 +270,15 @@
     }
   },
   {
-    "question": "Thái độ NVien",
+    "question": "Thái độ phục vụ của nhân viên",
     "answers": {
       "Rất hài lòng": 325,
-      "Bình thường": 52
+      "Bình thường": 52,
+      "Không hài lòng": 0
     }
   },
   {
-    "question": "Tốc độ Order",
+    "question": "Tốc độ Order tại quầy của thu ngân",
     "answers": {
       "Rất hài lòng": 311,
       "Bình thường": 65,
@@ -290,14 +294,15 @@
     }
   },
   {
-    "question": "Tốc độ phản hồi",
+    "question": "Tốc độ phản hồi của nhân viên",
     "answers": {
       "Rất hài lòng": 320,
-      "Bình thường": 57
+      "Bình thường": 57,
+      "Không hài lòng": 0
     }
   },
   {
-    "question": "Bàn ghế sạch sẽ",
+    "question": "Bàn ghế (sự sạch sẽ và thoải mái)",
     "answers": {
       "Rất hài lòng": 308,
       "Bình thường": 65,
@@ -313,7 +318,7 @@
     }
   },
   {
-    "question": "Sàn nhà",
+    "question": "Sàn nhà (sạch sẽ, an toàn)",
     "answers": {
       "Rất hài lòng": 295,
       "Bình thường": 81,
@@ -321,38 +326,39 @@
     }
   },
   {
-    "question": "Thực đơn",
+    "question": "Thực đơn (rõ ràng, dễ hiểu)",
     "answers": {
-      "Bình thường": 75,
       "Rất hài lòng": 299,
+      "Bình thường": 75,
       "Không hài lòng": 3
     }
   },
   {
-    "question": "Nhạc hay",
+    "question": "Bạn cảm thấy nhạc nhà hàng có hay không?",
     "answers": {
+      "Rất hài lòng": 155,
       "Bình thường": 52,
-      "Rất hài lòng": 155
+      "Không hài lòng": 0
     }
   },
   {
-    "question": "Nhạc to",
+    "question": "Bạn cảm nhận nhạc mở như vậy có to quá không?",
     "answers": {
-      "Bình thường": 86,
       "Rất hài lòng": 118,
+      "Bình thường": 86,
       "Không hài lòng": 3
     }
   },
   {
-    "question": "Thoải mái",
+    "question": "Không gian xung quanh có làm bạn cảm thấy thoải mái không?",
     "answers": {
-      "Bình thường": 57,
       "Rất hài lòng": 149,
+      "Bình thường": 57,      
       "Không hài lòng": 1
     }
   },
   {
-    "question": "",
+    "question": "Quà tặng",
     "answers": {
       "Bánh Pudding": 215,
       "Nước chanh dây xí muội": 90,

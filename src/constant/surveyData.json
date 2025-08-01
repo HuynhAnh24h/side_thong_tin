@@ -1,0 +1,362 @@
+[
+  {
+    "question": "Tuổi",
+    "answers": {
+      "25–32": 115,
+      "Dưới 25": 123,
+      "46+": 36,
+      "32–39": 64,
+      "39-46": 39
+    }
+  },
+  {
+    "question": "Hôn nhân",
+    "answers": {
+      "Đã có gia đình": 147,
+      "Độc thân": 230
+    }
+  },
+  {
+    "question": "Số lần ghé",
+    "answers": {
+      "Lần đầu": 177,
+      "Lần 2": 39,
+      "Thường xuyên": 61,
+      "Lần 3": 34
+    }
+  },
+  {
+    "question": "Nghề nghiệp",
+    "answers": {
+      "Kinh doanh cá nhân": 92,
+      "Sinh viên": 72,
+      "Nhân viên văn phòng": 200,
+      "Nội trợ": 13
+    }
+  },
+  {
+    "question": "Vị trí CViec",
+    "answers": {
+      "Cấp quản lý/ Trưởng phòng": 135,
+      "Nhân viên": 175,
+      "Thực tập sinh": 67
+    }
+  },
+  {
+    "question": "Địa chỉ",
+    "answers": {
+      "TP.HCM": 321,
+      "Hà Nội": 41,
+      "Đà Nẵng": 15
+    }
+  },
+  {
+    "question": "Kênh",
+    "answers": {
+      "Facebook / Instagram": 141,
+      "Người quen giới thiệu": 116,
+      "Tiktok": 102,
+      "Đi ngang thấy / tình cờ biết": 16,
+      "Ứng dụng giao hàng (ShopeeFood, GrabFood, Be, etc.)": 2
+    }
+  },
+  {
+    "question": "Món",
+    "answers": {
+      "Khô": 229,
+      "Nước": 148
+    }
+  },
+  {
+    "question": "Đặt hàng",
+    "answers": {
+      "Ứng dụng giao hàng": 225,
+      "Đến mua mang đi": 106,
+      "Gọi điện Hotline": 15,
+      "Đặt trực tiếp qua Fanpage": 31
+    }
+  },
+  {
+    "question": "Hương vị",
+    "answers": {
+      "Chua cay": 182,
+      "Creamy (vị béo nhẹ)": 67,
+      "Ngọt thanh": 128
+    }
+  },
+  {
+    "question": "Tần suất",
+    "answers": {
+      "Thỉnh thoảng": 179,
+      "Đây là lần đầu tiên": 17,
+      "Vài lần mỗi tuần": 62,
+      "Chỉ theo lịch ăn chay": 67,
+      "1 lần mỗi tuần": 25,
+      "Hằng ngày": 27
+    }
+  },
+  {
+    "question": "Thời gian",
+    "answers": {
+      "Từ 30 phút đến 1 tiếng": 264,
+      "Dưới 30 phút": 113
+    }
+  },
+  {
+    "question": "Mức giá",
+    "answers": {
+      "60.000–80.000đ": 126,
+      "40.000–60.000đ": 197,
+      "Dưới 40.000đ": 22,
+      "Trên 80.000đ": 32
+    }
+  },
+  {
+    "question": "Sở thích",
+    "answers": {
+      "Nghỉ ngơi ở nhà": 118,
+      "Đi ăn cùng với bạn bè, gia đình": 184,
+      "Đi tập thể thao": 75
+    }
+  },
+  {
+    "question": "Chủ đề MXH",
+    "answers": {
+      "Làm đẹp và Sức khoẻ": 98,
+      "Đồ ăn - Nhà hàng - Quán cafe": 214,
+      "Tin tức chính trị": 35,
+      "Showbiz": 30
+    }
+  },
+  {
+    "question": "Thời gian MXH",
+    "answers": {
+      "1 tiếng - 2 tiếng": 179,
+      "2 tiếng - 3 tiếng": 158,
+      "Dưới 1 tiếng": 40
+    }
+  },
+  {
+    "question": "Lý do chọn",
+    "answers": {
+      "Ngon miệng": 242,
+      "Hợp “vibe” của mình": 50,
+      "Thái độ phục vụ tốt": 34,
+      "Giá hợp lý": 23,
+      "Menu đa dạng": 21,
+      "Giao hàng nhanh": 2,
+      "Đóng gói đẹp": 5
+    }
+  },
+  {
+    "question": "Yếu tố chọn",
+    "answers": {
+      "Vệ sinh an toàn thực phẩm": 138,
+      "Thái độ phục vụ": 153,
+      "Sự trình bày món ăn": 64,
+      "Có khuyến mãi": 22
+    }
+  },
+  {
+    "question": "Giới thiệu",
+    "answers": {
+      "Rất sẵn lòng": 286,
+      "Có thể": 86,
+      "Không": 5
+    }
+  },
+  {
+    "question": "Sản phẩm",
+    "answers": {
+      "Rất hài lòng": 299,
+      "Bình thường": 78
+    }
+  },
+  {
+    "question": "Độ sạch sẽ",
+    "answers": {
+      "Rất hài lòng": 327,
+      "Bình thường": 50
+    }
+  },
+  {
+    "question": "Dịch vụ",
+    "answers": {
+      "Rất hài lòng": 326,
+      "Bình thường": 50,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Món khai vị",
+    "answers": {
+      "Rất hài lòng": 259,
+      "Bình thường": 118
+    }
+  },
+  {
+    "question": "Món nước",
+    "answers": {
+      "Rất hài lòng": 271,
+      "Bình thường": 103,
+      "Không hài lòng": 3
+    }
+  },
+  {
+    "question": "Món khô",
+    "answers": {
+      "Rất hài lòng": 283,
+      "Bình thường": 90,
+      "Không hài lòng": 4
+    }
+  },
+  {
+    "question": "Tráng miệng",
+    "answers": {
+      "Bình thường": 134,
+      "Rất hài lòng": 242,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Nước nhà làm",
+    "answers": {
+      "Bình thường": 128,
+      "Rất hài lòng": 248,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Cách trang trí",
+    "answers": {
+      "Bình thường": 71,
+      "Rất hài lòng": 304,
+      "Không hài lòng": 2
+    }
+  },
+  {
+    "question": "Khẩu phần",
+    "answers": {
+      "Rất hài lòng": 266,
+      "Bình thường": 107,
+      "Không hài lòng": 4
+    }
+  },
+  {
+    "question": "Mùi vị",
+    "answers": {
+      "Rất hài lòng": 300,
+      "Bình thường": 76,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Nhiệt độ MĂn",
+    "answers": {
+      "Rất hài lòng": 256,
+      "Bình thường": 119,
+      "Không hài lòng": 2
+    }
+  },
+  {
+    "question": "Hương thơm",
+    "answers": {
+      "Rất hài lòng": 281,
+      "Bình thường": 95,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Thái độ NVien",
+    "answers": {
+      "Rất hài lòng": 325,
+      "Bình thường": 52
+    }
+  },
+  {
+    "question": "Tốc độ Order",
+    "answers": {
+      "Rất hài lòng": 311,
+      "Bình thường": 65,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Tốc độ lên món",
+    "answers": {
+      "Rất hài lòng": 299,
+      "Bình thường": 76,
+      "Không hài lòng": 2
+    }
+  },
+  {
+    "question": "Tốc độ phản hồi",
+    "answers": {
+      "Rất hài lòng": 320,
+      "Bình thường": 57
+    }
+  },
+  {
+    "question": "Bàn ghế sạch sẽ",
+    "answers": {
+      "Rất hài lòng": 308,
+      "Bình thường": 65,
+      "Không hài lòng": 4
+    }
+  },
+  {
+    "question": "Nhà vệ sinh",
+    "answers": {
+      "Rất hài lòng": 274,
+      "Bình thường": 102,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Sàn nhà",
+    "answers": {
+      "Rất hài lòng": 295,
+      "Bình thường": 81,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "Thực đơn",
+    "answers": {
+      "Bình thường": 75,
+      "Rất hài lòng": 299,
+      "Không hài lòng": 3
+    }
+  },
+  {
+    "question": "Nhạc hay",
+    "answers": {
+      "Bình thường": 52,
+      "Rất hài lòng": 155
+    }
+  },
+  {
+    "question": "Nhạc to",
+    "answers": {
+      "Bình thường": 86,
+      "Rất hài lòng": 118,
+      "Không hài lòng": 3
+    }
+  },
+  {
+    "question": "Thoải mái",
+    "answers": {
+      "Bình thường": 57,
+      "Rất hài lòng": 149,
+      "Không hài lòng": 1
+    }
+  },
+  {
+    "question": "",
+    "answers": {
+      "Bánh Pudding": 215,
+      "Nước chanh dây xí muội": 90,
+      "Nước tía tô hạt chia": 72
+    }
+  }
+]

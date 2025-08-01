@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
-import SurvayForm from './components/common/SurvayForm'
-import "react-toastify/dist/ReactToastify.css"
-import { ToastContainer } from 'react-toastify'
-import Header from './components/common/Header'
+import SurvayPage from "./pages/SurvayPage"
+import Dashboard from "./pages/Dashboard"
+import {Routes,Route} from "react-router-dom"
+
 const App = () => {
-  const [go,setGo] = useState(false)
+
   return (
-    <div className='flex justify-center items-center min-h-screen'>
-      {
-        go ? <SurvayForm/> : <Header go={go} setGo={setGo}/>
-      }
-      <ToastContainer/>
-    </div>
+    <Routes>
+      <Route path="/" element={<SurvayPage/>}/>
+      <Route path="/thong-ke" element={<Dashboard/>}/>
+    </Routes>
   )
 }
 
